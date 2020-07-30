@@ -11,7 +11,7 @@
 
 export const getBooks = async (searchCriteria) => {
   try {
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchCriteria}+children+books&printType=books&maxResults=40&safe=active&outcome=embed`)
+    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchCriteria}+children+books&printType=books&filter=partial&tbs=bkv:p&maxResults=40&safe=active`)
     const data = await response.json()
     return data
   } catch (error) {
