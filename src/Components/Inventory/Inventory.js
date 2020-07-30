@@ -19,9 +19,9 @@ const Inventory = ({ books }) => {
             src={book.volumeInfo.imageLinks.smallThumbnail} 
             alt={book.volumeInfo.title + " cover"} 
           />}
-          <Link to={`/bookDetails/${book.id}`}>
+          {book.accessInfo.embeddable === true && <Link to={`/bookDetails/${book.id}`}>
             <button>Display Embedded Book</button>
-          </Link>
+          </Link>}
         </div>
       )
     })
