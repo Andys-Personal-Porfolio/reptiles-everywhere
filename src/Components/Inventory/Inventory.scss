@@ -7,3 +7,13 @@
 .book-title {
   height: 35px;
 }
+
+.book-info {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+img {
+  width: fit-content;
+}
