@@ -1,0 +1,48 @@
+
+$r: rgb(255,40,40);
+$rT: rgba(255,40,40,0);
+
+$w: rgb(240,240,240);
+$wT: rgba(240,240,240,0);
+
+$o: rgb(255,180,70);
+$oT: rgba(255,180,70,0);
+
+$do: rgb(232,144,0);
+$doT: rgba(232,144,0,0);
+@mixin scales {
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzhhMyI+PC9yZWN0Pgo8Y2lyY2xlIHI9IjkuMiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iIzIwMCIgZmlsbD0ibm9uZSI+PC9jaXJjbGU+CjxjaXJjbGUgY3k9IjE4LjQiIHI9IjkuMiIgc3Ryb2tlLXdpZHRoPSIxLjVweCIgc3Ryb2tlPSIjMjAwIiBmaWxsPSJub25lIj48L2NpcmNsZT4KPGNpcmNsZSBjeD0iMTguNCIgY3k9IjE4LjQiIHI9IjkuMiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iIzIwMCIgZmlsbD0ibm9uZSI+PC9jaXJjbGU+Cjwvc3ZnPg==");
+
+}
+
+.parasol {
+   background:
+    radial-gradient(100% 200% at 50% 100%, $r 50%, $rT 50.25%) 50% 1.5em / 9em 12em,
+    radial-gradient(100% 200% at 50% 100%, $w 50%, $wT 50.25%) 50% 1.5em / 21em 12em,
+    radial-gradient(100% 200% at 50% 100%, $r 50%, $rT 50.25%) 50% 1.5em / 30em 12em,
+    // 1
+    radial-gradient(200% 200% at 100% 100%, $do 49%, $doT 50%) 14em 0 / 1em 1em,
+    radial-gradient(200% 200% at 0% 100%, $o 49%, $oT 50%) 15em 0 / 1em 1em,
+    // 2
+    linear-gradient(90deg, $do 50%, $o 50%) 14em 1em / 2em 25em,
+    // 3
+    radial-gradient(100% 200% at 50% 0, $oT 0.95em, $o 1em, $o 1.95em, $do 2em, $do 2.95em, $doT 3em) 14em 26em / 6em 3em,
+    // 4
+    radial-gradient(200% 200% at 100% 100%, $o 49%, $oT 50%) 18em 25em / 1em 1em,
+    radial-gradient(200% 200% at 0% 100%, $do 49%, $doT 50%) 19em 25em / 1em 1em;
+  // background to go here
+  background-repeat: no-repeat;
+  font-size: 10px;
+  outline: 1px solid #aaa;
+  width: 30em;
+  height: 29em;
+}
+
+.App {
+  text-align: center;
+}
+
+html {
+  background-color: blanchedalmond;
+  @include scales;
+}

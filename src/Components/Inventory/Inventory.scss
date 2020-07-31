@@ -1,0 +1,24 @@
+@import '../App/App.scss';
+
+.book-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 5vh;
+}
+
+.book-title {
+  height: 35px;
+}
+
+.book-info {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  border-radius: 20px;
+  width: 80vw;
+  background: rgb(210, 212, 42);
+}
+
+img {
+  height: 20vh;
+}
