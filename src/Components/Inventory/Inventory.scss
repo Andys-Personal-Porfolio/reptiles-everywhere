@@ -14,10 +14,9 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  @include scales;
   border-radius: 20px;
   width: 80vw;
-  // background: rgb(210, 212, 42);
+  background: rgb(210, 212, 42);
 }
 
 img {

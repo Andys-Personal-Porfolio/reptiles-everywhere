@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './Inventory.scss'
-import BookDetails from '../BookDetails/BookDetails'
-import { getCoverImg } from '../../ApiCalls'
 import { Link } from 'react-router-dom'
-const Inventory = ({ books }) => {
-  const [coverImg, setCoverImg] = useState('')
+const Inventory = ({ books }, { getSingleBook }) => {
+  const [coverImg, setCoverImg] = useState()
   const createBookElement = () => {
     return books.map((book, i) => {
       return (
@@ -24,17 +22,14 @@ const Inventory = ({ books }) => {
     })
   }
 
-
-  const getCoverImg = async () => {
-    const coverImg = await getCoverImg();
-     //setCoverImg(coverImg)
-     console.log(coverImg)
-    return getCoverImg
+  const waitSingleBook = async () => {
+    const singleBook = await getSingleBook()
+    console.log(singleBook)
   }
 
   return (
     <>
-  
+    <button onClick={waitSingleBook}>Get cover img</button>
     <div className="book-container" >
       { books.length && createBookElement()}
     </div>

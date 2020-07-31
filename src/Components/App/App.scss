@@ -44,4 +44,5 @@ $doT: rgba(232,144,0,0);
 
 html {
   background-color: blanchedalmond;
+  @include scales;
 }

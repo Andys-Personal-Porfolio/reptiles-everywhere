@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './App.scss'
-import { getBooks } from '../../ApiCalls'
+import { fetchBooks, fetchSingleBook } from '../../ApiCalls'
 import Inventory from '../Inventory/Inventory'
 import BookDetails from '../BookDetails/BookDetails'
 import Header from '../Header/Header'
@@ -12,21 +12,27 @@ function App() {
   const [searchCritera, setSearchCriteria] = useState('reptiles')
 
   useEffect(() => {
-    const findBooks = async () => {
+    const getBooks = async () => {
       try {
-        const data = await getBooks(searchCritera)
+        const data = await fetchBooks(searchCritera)
         setBooks(data.items)
       } catch (error) {
         setError(error)
       }
     }
-    findBooks()
+    getBooks()
   }, [searchCritera])
 
   const searchBooks = (event) => {
     if (event.target.value) {
       setSearchCriteria(event.target.value.replace(/ /, '+')) 
     }
+  }
+
+  const getSingleBook = async () => {
+    console.log('no')
+    const singleBook = await fetchSingleBook();
+    return singleBook
   }
 
   return (
@@ -48,7 +54,7 @@ function App() {
           const bookToRender = books.find(
             (book) => book.id === id
           );
-          return (<BookDetails bookToRender={bookToRender}/>)
+          return (<BookDetails bookToRender={bookToRender} getSingleBook={getSingleBook}/>)
         }}
       />}
       {error && <div>{error.message}</div>}
