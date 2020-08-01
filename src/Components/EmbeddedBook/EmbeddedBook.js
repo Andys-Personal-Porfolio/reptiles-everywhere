@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link, useParams, useHistory} from 'react-router-dom' 
+import { useHistory} from 'react-router-dom' 
 
 const EmbeddedBook = ({bookToRender}) => {
   const previewLink = bookToRender.volumeInfo.previewLink + '&output=embed'
-  let params = useParams();
   let history = useHistory();
-  console.log(params)
+
   return (
     <>
         <button 

@@ -1,30 +1,27 @@
 import React, { useState } from 'react'
 import './Header.scss'
+import { NavLink } from 'react-router-dom'
 
 const Header = ({searchBooks}) => {
-  const categories = ['crocodiles', 'lizards', 'reptiles', 'snakes','tuatara', 'turtles']
-  const makeRadioBtns = () => {
-    const radioBtns = categories.map(category => {
+  
+  const makeNavLinks = () => {
+    const categories = ['crocodiles', 'lizards', 'reptiles', 'snakes','tuatara', 'turtles']
+    const navLinks = categories.map(category => {
       return (
-      <label htmlFor={category} key={category + ' radio-btn'}>
-        <input 
-          type="radio" 
-          name="search-criteria" 
-          id={category}
-          onChange={(event) => searchBooks(event.target.id)} />
-      {category}
-      </label>
-      )
+        <NavLink to={`/${category}`} key={category + 'button'}>
+          <button onClick={() => searchBooks(category)}>{category}</button>
+        </NavLink>
+      ) 
     })
     return (
-      radioBtns
+      navLinks
     )
   }
 
   return (
     <header>
       <h2>Reptiles Everywhere!</h2>
-      {searchBooks.length && makeRadioBtns()}
+      { makeNavLinks()}
     </header>
   )
 }

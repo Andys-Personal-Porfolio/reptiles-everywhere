@@ -31,7 +31,6 @@ function App() {
   }, [searchCritera])
 
   const searchBooks = (id) => {
-    console.log(id)
     setSearchCriteria(id) 
   }
 
@@ -47,14 +46,15 @@ function App() {
       {books.length && (
         <Route
           exact
-          path="/"
-          render={() => (
-            <Inventory books={books} category={searchCritera}/> 
-          )}
+          path="/:category"
+          render={({ match }) => {
+            const { category } = match.params
+            return <Inventory books={books} category={category}/> 
+          }}
         />
       )}
       {books.length && <Route
-        path="/:category/:id"
+        path="/:category/EmbeddedBook/:id"
         render={({ match }) => {
           const { id, category } = match.params
           const bookToRender = books.find(
