@@ -8,6 +8,7 @@ import { Route } from 'react-router-dom'
 
 function App() {
   const [books, setBooks] = useState({})
+  const [singleBooks, setSingleBooks] = useState({})
   const [error, setError] = useState({})
   const [searchCritera, setSearchCriteria] = useState('reptiles')
 
@@ -16,6 +17,12 @@ function App() {
       try {
         const data = await fetchBooks(searchCritera)
         setBooks(data.items)
+        // const singleBooks = books.map(async (book) => {
+        //   const singleBook = await fetchSingleBook()
+        //   return singleBook
+        // })
+
+        // setSingleBooks(singleBooks)
       } catch (error) {
         setError(error)
       }
