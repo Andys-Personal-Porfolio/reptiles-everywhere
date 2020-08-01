@@ -16,9 +16,9 @@ describe('Header', () => {
   
   it('should render radio buttons of categories', () => {
     const { getByRole } = render(<MemoryRouter><Header /></MemoryRouter>)
-    const categoryBtn1 = getByRole('radio', { name: 'crocodiles' })
-    const categoryBtn2 = getByRole('radio', { name: 'turtles' })
-    const categoryBtn3 = getByRole('radio', { name: 'snakes' })
+    const categoryBtn1 = getByRole('button', { name: 'crocodiles' })
+    const categoryBtn2 = getByRole('button', { name: 'turtles' })
+    const categoryBtn3 = getByRole('button', { name: 'snakes' })
 
     expect(categoryBtn1).toBeInTheDocument()
     expect(categoryBtn2).toBeInTheDocument()

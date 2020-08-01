@@ -1,4 +1,4 @@
-const fetchBooksMockData = {
+export const reptileBooksMockData = {
   "kind": "books#volumes",
   "totalItems": 1881,
   "items": [
@@ -200,4 +200,232 @@ const fetchBooksMockData = {
     }]
 }
 
-export default fetchBooksMockData
+export const turtleBooksMockData = {
+  "kind": "books#volumes",
+  "totalItems": 2859,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "vEzxV2pgkhMC",
+      "etag": "XaS840JGmMo",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/vEzxV2pgkhMC",
+      "volumeInfo": {
+        "title": "Sea Turtles",
+        "authors": [
+"Laura F. Marsh"
+],
+  "publisher": "National Geographic Books",
+  "publishedDate": "2011",
+  "description": "Presents the life of sea turtles, including where they travel, how they build nests, and what they eat.",
+  "industryIdentifiers": [
+    {
+      "type": "ISBN_13",
+      "identifier": "9781426308543"
+},
+    {
+      "type": "ISBN_10",
+      "identifier": "142630854X"
+}
+  ],
+  "readingModes": {
+    "text": false,
+    "image": false
+},
+  "pageCount": 32,
+  "printType": "BOOK",
+  "categories": [
+"Juvenile Nonfiction"
+],
+"averageRating": 4.5,
+  "ratingsCount": 2,
+    "maturityRating": "NOT_MATURE",
+      "allowAnonLogging": false,
+        "contentVersion": "0.3.1.0.preview.0",
+          "panelizationSummary": {
+  "containsEpubBubbles": false,
+    "containsImageBubbles": false
+},
+"imageLinks": {
+  "smallThumbnail": "http://books.google.com/books/content?id=vEzxV2pgkhMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/content?id=vEzxV2pgkhMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+},
+"language": "en",
+  "previewLink": "http://books.google.com/books?id=vEzxV2pgkhMC&printsec=frontcover&dq=turtles+nonfiction+children+books&hl=&as_brr=3&as_pt=BOOKS&cd=1&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=vEzxV2pgkhMC&dq=turtles+nonfiction+children+books&hl=&as_brr=3&as_pt=BOOKS&source=gbs_api",
+      "canonicalVolumeLink": "https://books.google.com/books/about/Sea_Turtles.html?hl=&id=vEzxV2pgkhMC"
+},
+"saleInfo": {
+  "country": "US",
+    "saleability": "NOT_FOR_SALE",
+      "isEbook": false
+},
+"accessInfo": {
+  "country": "US",
+    "viewability": "PARTIAL",
+      "embeddable": true,
+        "publicDomain": false,
+          "textToSpeechPermission": "ALLOWED",
+            "epub": {
+    "isAvailable": false
+  },
+  "pdf": {
+    "isAvailable": false
+  },
+  "webReaderLink": "http://play.google.com/books/reader?id=vEzxV2pgkhMC&hl=&as_brr=3&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+      "quoteSharingAllowed": false
+},
+"searchInfo": {
+  "textSnippet": "Presents the life of sea turtles, including where they travel, how they build nests, and what they eat."
+}
+},
+{
+  "kind": "books#volume",
+    "id": "AYNZCwAAQBAJ",
+      "etag": "z9OJ5XixHBc",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/AYNZCwAAQBAJ",
+          "volumeInfo": {
+    "title": "Follow the Moon Home",
+      "subtitle": "A Tale of One Idea, Twenty Kids, and a Hundred Sea Turtles",
+        "authors": [
+          "Philippe Cousteau",
+          "Deborah Hopkinson"
+        ],
+          "publisher": "Chronicle Books",
+            "publishedDate": "2016-04-05",
+              "description": "Acclaimed activist Philippe Cousteau and renowned author Deborah Hopkinson team up to offer a story of the powerful difference young people can make in the world. Meet Viv, who has a new home and a new school by the sea, and follow her as she finds her way in a new place and helps bring together a whole community to save the sea turtles of the South Carolina coast.",
+                "industryIdentifiers": [
+                  {
+                    "type": "ISBN_13",
+                    "identifier": "9781452154121"
+                  },
+                  {
+                    "type": "ISBN_10",
+                    "identifier": "1452154120"
+                  }
+                ],
+                  "readingModes": {
+      "text": false,
+        "image": true
+    },
+    "pageCount": 48,
+      "printType": "BOOK",
+        "categories": [
+          "Juvenile Fiction"
+        ],
+          "averageRating": 4,
+            "ratingsCount": 1,
+              "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                  "contentVersion": "preview-1.0.0",
+                    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=AYNZCwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=AYNZCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+      "previewLink": "http://books.google.com/books?id=AYNZCwAAQBAJ&printsec=frontcover&dq=turtles+nonfiction+children+books&hl=&as_brr=3&as_pt=BOOKS&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=AYNZCwAAQBAJ&dq=turtles+nonfiction+children+books&hl=&as_brr=3&as_pt=BOOKS&source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Follow_the_Moon_Home.html?hl=&id=AYNZCwAAQBAJ"
+  },
+  "saleInfo": {
+    "country": "US",
+      "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+  },
+  "accessInfo": {
+    "country": "US",
+      "viewability": "PARTIAL",
+        "embeddable": true,
+          "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
+              "epub": {
+      "isAvailable": false
+    },
+    "pdf": {
+      "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=AYNZCwAAQBAJ&hl=&as_brr=3&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+      "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+  },
+  "searchInfo": {
+    "textSnippet": "&quot;A book about loggerhead sea turtles, and a girl&#39;s attempts to help save their babies from man-made light.&quot;--"
+  }
+},
+{
+  "kind": "books#volume",
+    "id": "mWHkoUw6r_oC",
+      "etag": "M0zdEqwMOFk",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/mWHkoUw6r_oC",
+          "volumeInfo": {
+    "title": "Turtle, Turtle, Watch Out!",
+      "authors": [
+        "April Pulley Sayre"
+      ],
+        "publisher": "Charlesbridge",
+          "publishedDate": "2010-02-01",
+            "description": "Humans offer a helping hand. Sea turtles face many dangers as they grow, eat, travel, and breed. In this dramatization of one female turtle's challenges, acclaimed nature writer April Pulley Sayre highlights the role that humans have in helping this endangered species. Previously published, this story has been re-illustrated by Annie Patterson. Information on sea turtle conservation efforts and the seven species of sea turtles is included.",
+              "industryIdentifiers": [
+                {
+                  "type": "ISBN_13",
+                  "identifier": "9781607341932"
+                },
+                {
+                  "type": "ISBN_10",
+                  "identifier": "160734193X"
+                }
+              ],
+                "readingModes": {
+      "text": false,
+        "image": true
+    },
+    "pageCount": 32,
+      "printType": "BOOK",
+        "categories": [
+          "Juvenile Nonfiction"
+        ],
+          "averageRating": 4,
+            "ratingsCount": 5,
+              "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                  "contentVersion": "0.1.1.0.preview.1",
+                    "panelizationSummary": {
+      "containsEpubBubbles": false,
+        "containsImageBubbles": false
+    },
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=mWHkoUw6r_oC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=mWHkoUw6r_oC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+      "previewLink": "http://books.google.com/books?id=mWHkoUw6r_oC&printsec=frontcover&dq=turtles+nonfiction+children+books&hl=&as_brr=3&as_pt=BOOKS&cd=3&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=mWHkoUw6r_oC&dq=turtles+nonfiction+children+books&hl=&as_brr=3&as_pt=BOOKS&source=gbs_api",
+          "canonicalVolumeLink": "https://books.google.com/books/about/Turtle_Turtle_Watch_Out.html?hl=&id=mWHkoUw6r_oC"
+  },
+  "saleInfo": {
+    "country": "US",
+      "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+  },
+  "accessInfo": {
+    "country": "US",
+      "viewability": "PARTIAL",
+        "embeddable": true,
+          "publicDomain": false,
+            "textToSpeechPermission": "ALLOWED",
+              "epub": {
+      "isAvailable": false
+    },
+    "pdf": {
+      "isAvailable": true,
+        "acsTokenLink": "http://books.google.com/books/download/Turtle_Turtle_Watch_Out-sample-pdf.acsm?id=mWHkoUw6r_oC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=mWHkoUw6r_oC&hl=&as_brr=3&as_pt=BOOKS&printsec=frontcover&source=gbs_api",
+      "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+  },
+  "searchInfo": {
+    "textSnippet": "Previously published, this story has been re-illustrated by Annie Patterson. Information on sea turtle conservation efforts and the seven species of sea turtles is included."
+  }
+}]
+}

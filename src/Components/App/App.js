@@ -4,7 +4,7 @@ import { fetchBooks, fetchSingleBook } from '../../ApiCalls'
 import Inventory from '../Inventory/Inventory'
 import EmbeddedBook from '../EmbeddedBook/EmbeddedBook'
 import Header from '../Header/Header'
-import { Route, useLocation} from 'react-router-dom' 
+import { Route, Redirect, useLocation} from 'react-router-dom' 
 
 function App() {
   const location = useLocation();
@@ -13,7 +13,6 @@ function App() {
   const [singleBooks, setSingleBooks] = useState({})
   const [error, setError] = useState({})
   const [searchCritera, setSearchCriteria] = useState(category || 'reptiles')
-
   useEffect(() => {
     const getBooks = async () => {
       try {
@@ -68,6 +67,9 @@ function App() {
           return (<EmbeddedBook bookToRender={bookToRender} getSingleBook={getSingleBook}/>)
         }}
       />}
+      <Route path='/'>
+        <Redirect to='/reptiles' />
+      </Route>
       {error && <h2 className="error-message">{error.message}</h2>}
       <div className="parasol"></div>
     </div>
