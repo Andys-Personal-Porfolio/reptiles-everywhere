@@ -3,15 +3,14 @@ import { render, waitFor, fireEvent } from '@testing-library/react'
 import App from './App'
 import { MemoryRouter } from 'react-router-dom';
 import { fetchBooks } from '../../ApiCalls'
-import '@testing-library/jest-dom';
-import fetchBooksMockData  from './fetchBooksMockData'
+import { reptileBooksMockData, turtleBooksMockData}  from './fetchBooksMockData'
 
 jest.mock("../../ApiCalls");
 
 
 describe('App', () => {
 
-  fetchBooks.mockResolvedValue(fetchBooksMockData)
+  fetchBooks.mockResolvedValue(reptileBooksMockData)
   const mockBookTitle = "All About the Reptiles of the World - Animal Books | Children's Animal Books";
 
   it('should render website title Reptiles Everywhere! on load', async () => {
@@ -20,12 +19,34 @@ describe('App', () => {
     expect(title).toBeInTheDocument()
   })
 
-  it('should render book titles on load', async () => {
+  it('should render reptile books titles on load', async () => {
     const { getByRole } = render(<MemoryRouter><App /></MemoryRouter>)
-    const bookTitle = await waitFor(() => getByRole('heading', { name:"Smart Kids: Reptiles and Amphibians"}))
-    const bookTitle2 = await waitFor(() => getByRole('heading', {name: mockBookTitle }))
+    const bookTitle = await waitFor(() => getByRole('heading', { name: "Smart Kids: Reptiles and Amphibians" }))
+    const bookTitle2 = await waitFor(() => getByRole('heading', { name: mockBookTitle }))
     expect(bookTitle).toBeInTheDocument()
     expect(bookTitle2).toBeInTheDocument()
+  })
+
+  it('should render reptile books titles on load and change to tutle books on click, and change back on click to reptiles', async () => {
+    const { getByRole, debug } = render(<MemoryRouter><App /></MemoryRouter>)
+
+    const reptileTitle = await waitFor(() => getByRole('heading', { name:"Smart Kids: Reptiles and Amphibians"}))
+    expect(reptileTitle).toBeInTheDocument()
+
+    fetchBooks.mockResolvedValueOnce(turtleBooksMockData)
+    const turtleBtn = await waitFor(() => getByRole('button', { name: 'turtles' }))
+    fireEvent.click(turtleBtn)
+
+    const turtleTitle = await waitFor(() => getByRole('heading', { name: "Sea Turtles" }))
+    const turtleTitle2 = await waitFor(() => getByRole('heading', { name: "Follow the Moon Home" }))
+    expect(turtleTitle).toBeInTheDocument()
+    expect(turtleTitle2).toBeInTheDocument()
+
+    const reptileBtn = await waitFor(() => getByRole('button', { name: 'reptiles' }))
+    fireEvent.click(reptileBtn)
+
+    const reptileTitle2 = await waitFor(() => getByRole('heading', { name: "Smart Kids: Reptiles and Amphibians" }))
+    expect(reptileTitle2).toBeInTheDocument()
   })
 
   it('should render covers of books on load', async () => {

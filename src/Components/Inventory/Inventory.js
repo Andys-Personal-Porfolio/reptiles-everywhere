@@ -9,7 +9,6 @@ const Inventory = ({ books, category, getSingleBook }) => {
     const filteredBooks = books.filter(book => book.accessInfo.embeddable === true)
     return filteredBooks.map((book, i) => {
       const textSnippet = book.searchInfo ? book.searchInfo.textSnippet : "No description available!";
-      console.log(textSnippet)
       return (
         <div key={i} className="book-info">
           <h2 className={`book-title ${book.volumeInfo.title.length}` }>{book.volumeInfo.title}</h2>
