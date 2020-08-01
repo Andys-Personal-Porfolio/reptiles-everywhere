@@ -8,7 +8,10 @@ const Header = ({searchBooks}) => {
     const categories = ['crocodiles', 'lizards', 'reptiles', 'snakes','tuatara', 'turtles']
     const navLinks = categories.map(category => {
       return (
-        <NavLink to={`/${category}`} key={category + 'button'}>
+        <NavLink 
+          to={`/${category}`} 
+          key={category + 'button'}
+          activeClassName='active'>
           <button onClick={() => searchBooks(category)}>{category}</button>
         </NavLink>
       ) 
