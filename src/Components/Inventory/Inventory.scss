@@ -2,7 +2,7 @@
 
 .book-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 5vh;
   justify-items: center;
 }
@@ -22,9 +22,10 @@
   background: $white-green;
   width: 40vw;
   box-shadow: 1px 1px 2px black;
-  button {
+ button {
     display:inline-block;
     padding:0.46em 1.6em;
+    padding-bottom: 1.4em;
     height: 5vh;
     border:0.1em solid #000000;
     margin:0 0.2em 0.2em 0;
@@ -33,11 +34,12 @@
     text-decoration:none;
     font-family:'Roboto',sans-serif;
     font-weight:800;
-    color:$black-green;
+    font-size: 20px;
+    color:white;
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
     text-align:center;
     transition: all 0.15s;
-    background-color:#00b400;
+    background-color:#2ea44f;
     &:hover{
       text-shadow: 0 0 2em rgba(255,255,255,1);
       color:#FFFFFF;
@@ -61,3 +63,17 @@
   margin-left: 3em;
   font-size: 20px;
 }
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
+@media (min-width:481px)  { 
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+}
+@media (min-width:641px)  { 
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+  .book-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
