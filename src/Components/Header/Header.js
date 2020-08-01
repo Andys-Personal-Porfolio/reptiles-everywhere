@@ -1,12 +1,30 @@
 import React, { useState } from 'react'
+import './Header.scss'
+import { NavLink } from 'react-router-dom'
 
 const Header = ({searchBooks}) => {
+  
+  const makeNavLinks = () => {
+    const categories = ['crocodiles', 'lizards', 'reptiles', 'snakes','tuataras', 'turtles']
+    const navLinks = categories.map(category => {
+      return (
+        <NavLink 
+          to={`/${category}`} 
+          key={category + 'button'}
+          activeClassName='active'>
+          <button onClick={() => searchBooks(category)}>{category}</button>
+        </NavLink>
+      ) 
+    })
+    return (
+      navLinks
+    )
+  }
 
   return (
     <header>
       <h2>Reptiles Everywhere!</h2>
-      <p> Reptiles are turtles, snakes, lizards, alligators and crocodiles. </p>
-      <input type="text" onChange={(event) => searchBooks(event)}/>
+      { makeNavLinks()}
     </header>
   )
 }
