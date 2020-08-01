@@ -1,4 +1,10 @@
 
+$black-green: #26240A;
+$dark-green: #403D12;
+$light-green: #8C862A;
+$medium-green: #736D22;
+$white-green: #F2EEB6;
+
 @mixin scales {
   background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iIzhhMyI+PC9yZWN0Pgo8Y2lyY2xlIHI9IjkuMiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iIzIwMCIgZmlsbD0ibm9uZSI+PC9jaXJjbGU+CjxjaXJjbGUgY3k9IjE4LjQiIHI9IjkuMiIgc3Ryb2tlLXdpZHRoPSIxLjVweCIgc3Ryb2tlPSIjMjAwIiBmaWxsPSJub25lIj48L2NpcmNsZT4KPGNpcmNsZSBjeD0iMTguNCIgY3k9IjE4LjQiIHI9IjkuMiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iIzIwMCIgZmlsbD0ibm9uZSI+PC9jaXJjbGU+Cjwvc3ZnPg==");
 
@@ -9,6 +15,6 @@
 }
 
 html {
-  background-color: blanchedalmond;
-  @include scales;
+  background: url("https://www.publicdomainpictures.net/pictures/160000/velka/scales-4.jpg");
+  background-size: 150px;
 }
