@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './App.scss'
 import { fetchBooks, fetchSingleBook } from '../../ApiCalls'
 import Inventory from '../Inventory/Inventory'
-import BookDetails from '../BookDetails/BookDetails'
+import EmbeddedBook from '../EmbeddedBook/EmbeddedBook'
 import Header from '../Header/Header'
 import { Route } from 'react-router-dom' 
 
@@ -48,16 +48,16 @@ function App() {
         />
       )}
       {books.length && <Route
-        path="/BookDetails/:id"
+        path="/EmbeddedBook/:id"
         render={({ match }) => {
           const { id } = match.params
           const bookToRender = books.find(
             (book) => book.id === id
           );
-          return (<BookDetails bookToRender={bookToRender} getSingleBook={getSingleBook}/>)
+          return (<EmbeddedBook bookToRender={bookToRender} getSingleBook={getSingleBook}/>)
         }}
       />}
-      {error && <div>{error.message}</div>}
+      {error && <h2 className="error-message">{error.message}</h2>}
       <div className="parasol"></div>
     </div>
   );
