@@ -10,11 +10,19 @@
 // }
 
 export const fetchBooks = async (searchCriteria) => {
+  const urlParts = 
+    [`https://www.googleapis.com/`,
+    `books/v1/volumes?`,
+    `q=intitle:${searchCriteria}`,
+    `+non+fiction+children+books`,
+    `&printType=books`,
+    `&filter=partial`,
+    `&maxResults=40`,
+    `&safe=active`,
+    `&maxAllowedMaturityRating=not-mature`]
+  const url = urlParts.join('')
   try {
-    const response = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=
-      ${searchCriteria}
-      non+fiction+children+books&printType=books&filter=partial&tbs=bkv:p&maxResults=40&safe=active&maxAllowedMaturityRating=not-mature`)
+    const response = await fetch(url)
     const data = await response.json()
     return data
   } catch (error) {

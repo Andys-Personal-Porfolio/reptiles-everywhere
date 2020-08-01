@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 const Header = ({searchBooks}) => {
   
   const makeNavLinks = () => {
-    const categories = ['crocodiles', 'lizards', 'reptiles', 'snakes','tuatara', 'turtles']
+    const categories = ['crocodiles', 'lizards', 'reptiles', 'snakes','tuataras', 'turtles']
     const navLinks = categories.map(category => {
       return (
         <NavLink 
