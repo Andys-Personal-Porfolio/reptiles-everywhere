@@ -14,8 +14,9 @@ const Inventory = ({ books }, { getSingleBook }) => {
             src={book.volumeInfo.imageLinks.thumbnail} 
             alt={book.volumeInfo.title + " cover"} 
           />}
-          {book.accessInfo.embeddable === true && <Link to={`/bookDetails/${book.id}`}>
-            <button>Display Embedded Book</button>
+          {book.accessInfo.embeddable === true && 
+          <Link to={`/EmbeddedBook/${book.id}`}>
+            <button aria-label={`Start Reading ${book.volumeInfo.title}`}>Start Reading</button>
           </Link>}
         </div>
       )
