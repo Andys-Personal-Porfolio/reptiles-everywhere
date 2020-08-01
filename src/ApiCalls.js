@@ -17,6 +17,7 @@ export const fetchBooks = async (searchCriteria) => {
     `+non+fiction+children+books`,
     `&printType=books`,
     `&filter=partial`,
+    `&startIndex=0`,
     `&maxResults=40`,
     `&safe=active`,
     `&maxAllowedMaturityRating=not-mature`]

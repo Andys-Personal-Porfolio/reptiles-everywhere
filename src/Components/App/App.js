@@ -4,13 +4,15 @@ import { fetchBooks, fetchSingleBook } from '../../ApiCalls'
 import Inventory from '../Inventory/Inventory'
 import EmbeddedBook from '../EmbeddedBook/EmbeddedBook'
 import Header from '../Header/Header'
-import { Route } from 'react-router-dom' 
+import { Route, useLocation} from 'react-router-dom' 
 
 function App() {
+  const location = useLocation();
+  const category = location.pathname.split('/')[1]
   const [books, setBooks] = useState({})
   const [singleBooks, setSingleBooks] = useState({})
   const [error, setError] = useState({})
-  const [searchCritera, setSearchCriteria] = useState('reptiles')
+  const [searchCritera, setSearchCriteria] = useState(category || 'reptiles')
 
   useEffect(() => {
     const getBooks = async () => {
