@@ -18,7 +18,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  border: thick double #6C789F;
+  border: 1em  double rgb(0, 180, 0);
   background: #8DA671;
   background: #35498C;
   background: $white-green;
@@ -39,18 +39,13 @@
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
     text-align:center;
     transition: all 0.15s;
-    background-color:#31d636;
+    background-color:#3FBF3F;
     &:hover{
       text-shadow: 0 0 2em rgba(255,255,255,1);
       color:#FFFFFF;
       border-color:#FFFFFF;
     }
   }
-}
-
-
-img {
-  height: 20vh;
 }
 
 .book-description {
