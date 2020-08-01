@@ -18,9 +18,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  border: 1em  double rgb(0, 180, 0);
-  background: #8DA671;
-  background: #35498C;
+  border: 1em  double $medium-green;
   background: $white-green;
   width: 40vw;
   box-shadow: 1px 1px 2px black;
@@ -35,11 +33,11 @@
     text-decoration:none;
     font-family:'Roboto',sans-serif;
     font-weight:800;
-    color:#000000;
+    color:$black-green;
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
     text-align:center;
     transition: all 0.15s;
-    background-color:#3FBF3F;
+    background-color:#00b400;
     &:hover{
       text-shadow: 0 0 2em rgba(255,255,255,1);
       color:#FFFFFF;
@@ -61,4 +59,5 @@
   text-align: left;
   margin-right: 2em;
   margin-left: 3em;
+  font-size: 20px;
 }
