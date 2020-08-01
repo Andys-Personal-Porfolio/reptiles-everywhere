@@ -1,13 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom' 
+import { Link, useParams, useHistory} from 'react-router-dom' 
 
 const EmbeddedBook = ({bookToRender}) => {
   const previewLink = bookToRender.volumeInfo.previewLink + '&output=embed'
+  let params = useParams();
+  let history = useHistory();
+  console.log(params)
   return (
     <>
-      <Link to={`/`}>
-        <button aria-label={`Go Back To Home Page`}>⬅ GO BACK</button>
-      </Link>
+        <button 
+        aria-label={`Go Back To Home Page`}
+        onClick= {() => history.goBack()}>
+        ⬅ GO BACK
+        </button>
       {previewLink.length && 
       <iframe 
         frameBorder="0" 

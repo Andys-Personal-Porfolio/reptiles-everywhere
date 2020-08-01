@@ -24,7 +24,7 @@ const Header = ({searchBooks}) => {
   return (
     <header>
       <h2>Reptiles Everywhere!</h2>
-      {makeRadioBtns()}
+      {searchBooks.length && makeRadioBtns()}
     </header>
   )
 }
