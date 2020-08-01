@@ -24,7 +24,7 @@ const Inventory = ({ books, category, getSingleBook }) => {
           </section>
           <p>{book.volumeInfo.authors}</p>
           <Link to={`/${category}/EmbeddedBook/${book.id}`}>
-            <button aria-label={`Start Reading ${book.volumeInfo.title}`}>Start Reading</button>
+            <button aria-label={`Start Reading ${book.volumeInfo.title}`}>START READING</button>
           </Link>
         </div>
       )

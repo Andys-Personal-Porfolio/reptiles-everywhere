@@ -9,10 +9,9 @@
 
 .book-title {
   height: 35px;
-  // font-size: 30px;
+  font-size: 30px;
   margin-block-start: 0.2em;
   color:black;
-  font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
 }
 
 .book-info {
@@ -25,7 +24,30 @@
   background: $white-green;
   width: 40vw;
   box-shadow: 1px 1px 2px black;
+  button {
+    display:inline-block;
+    padding:0.46em 1.6em;
+    height: 5vh;
+    border:0.1em solid #000000;
+    margin:0 0.2em 0.2em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:800;
+    color:#000000;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.15s;
+    background-color:#31d636;
+    &:hover{
+      text-shadow: 0 0 2em rgba(255,255,255,1);
+      color:#FFFFFF;
+      border-color:#FFFFFF;
+    }
+  }
 }
+
 
 img {
   height: 20vh;
@@ -33,9 +55,6 @@ img {
 
 .book-description {
   display: flex;
-  // background: #6C789F;
-  // background: #35498C;
-  // border: 2px solid black;
   padding-left: 3em;
   padding-right: 3em;
   padding-top: 1em;
@@ -43,18 +62,8 @@ img {
 }
 
 .text-snippet {
-  // width: 25vw;
-  // font-size: 25px;
   color:$dark-green;
   text-align: left;
-  margin: 2em;
+  margin-right: 2em;
   margin-left: 3em;
-  // background: $white-green;
-  // border: 1px solid $black-green;
-}
-
-button {
-  height: 6vh;
-  width: 22vw;
-  margin: 1em;
 }
