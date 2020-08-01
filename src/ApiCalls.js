@@ -23,7 +23,7 @@ export const fetchBooks = async (searchCriteria) => {
     `&maxAllowedMaturityRating=not-mature`]
 
   if (searchCriteria === 'turtles') {
-    urlParts.splice(3, 0, '+-mutant+-Michaelangelo')
+    urlParts.splice(3, 0, '+-mutant+-Michelangelo')
   }
   const url = urlParts.join('')
   try {

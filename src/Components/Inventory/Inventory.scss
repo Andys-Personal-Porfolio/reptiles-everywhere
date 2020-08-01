@@ -9,16 +9,22 @@
 
 .book-title {
   height: 35px;
+  // font-size: 30px;
+  margin-block-start: 0.2em;
+  color:black;
+  font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));
 }
 
 .book-info {
   display: flex;
   flex-flow: column;
   align-items: center;
-  border-radius: 5px;
-  border: 5px solid $black-green;
+  border: thick double #6C789F;
+  background: #8DA671;
+  background: #35498C;
   background: $white-green;
   width: 40vw;
+  box-shadow: 1px 1px 2px black;
 }
 
 img {
@@ -27,9 +33,28 @@ img {
 
 .book-description {
   display: flex;
+  // background: #6C789F;
+  // background: #35498C;
+  // border: 2px solid black;
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-top: 1em;
+  height: 25vh;
 }
 
 .text-snippet {
-  width: 25vw;
-  font-size: 20px;
+  // width: 25vw;
+  // font-size: 25px;
+  color:$dark-green;
+  text-align: left;
+  margin: 2em;
+  margin-left: 3em;
+  // background: $white-green;
+  // border: 1px solid $black-green;
+}
+
+button {
+  height: 6vh;
+  width: 22vw;
+  margin: 1em;
 }
