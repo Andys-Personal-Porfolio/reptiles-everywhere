@@ -23,7 +23,7 @@ const Header = ({searchBooks}) => {
 
   return (
     <header>
-      <h2>Reptiles Everywhere!</h2>
+      <h1>Reptiles Everywhere!</h1>
       { makeNavLinks()}
     </header>
   )

@@ -23,10 +23,9 @@ export const fetchBooks = async (searchCriteria) => {
     `&maxAllowedMaturityRating=not-mature`]
 
   if (searchCriteria === 'turtles') {
-    urlParts.splice(3, 0, '+-mutant+-Michaelangelo')
+    urlParts.splice(3, 0, '+-mutant+-Michelangelo')
   }
   const url = urlParts.join('')
-  console.log(url)
   try {
     const response = await fetch(url)
     const data = await response.json()
