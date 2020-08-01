@@ -30,10 +30,9 @@ function App() {
     getBooks()
   }, [searchCritera])
 
-  const searchBooks = (event) => {
-    if (event.target.value) {
-      setSearchCriteria(event.target.value.replace(/ /, '+')) 
-    }
+  const searchBooks = (id) => {
+    console.log(id)
+    setSearchCriteria(id) 
   }
 
   const getSingleBook = async () => {
@@ -50,17 +49,20 @@ function App() {
           exact
           path="/"
           render={() => (
-            <Inventory books={books} /> 
+            <Inventory books={books} category={searchCritera}/> 
           )}
         />
       )}
       {books.length && <Route
-        path="/EmbeddedBook/:id"
+        path="/:category/:id"
         render={({ match }) => {
-          const { id } = match.params
+          const { id, category } = match.params
           const bookToRender = books.find(
             (book) => book.id === id
-          );
+          ) 
+          if(!bookToRender) {
+            searchBooks(category)
+          }
           return (<EmbeddedBook bookToRender={bookToRender} getSingleBook={getSingleBook}/>)
         }}
       />}

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import './Inventory.scss'
 import { Link } from 'react-router-dom'
-const Inventory = ({ books }, { getSingleBook }) => {
+const Inventory = ({ books, category, getSingleBook }) => {
   const [coverImg, setCoverImg] = useState()
   const createBookElement = () => {
     return books.map((book, i) => {
-      const authors = book.volumeInfo.authors.map(author => author + '               ')
+
       return (
         <div key={i} className="book-info">
           <h3 className="book-title">{book.volumeInfo.title}</h3>
@@ -14,9 +14,9 @@ const Inventory = ({ books }, { getSingleBook }) => {
             src={book.volumeInfo.imageLinks.thumbnail} 
             alt={book.volumeInfo.title + " cover"} 
           />}
-          <p>{authors}</p>
+          <p>{book.volumeInfo.authors}</p>
           {book.accessInfo.embeddable === true && 
-          <Link to={`/EmbeddedBook/${book.id}`}>
+          <Link to={`/${category}/${book.id}`}>
             <button aria-label={`Start Reading ${book.volumeInfo.title}`}>Start Reading</button>
           </Link>}
         </div>
@@ -31,10 +31,9 @@ const Inventory = ({ books }, { getSingleBook }) => {
 
   return (
     <>
-    <button onClick={waitSingleBook}>Get cover img</button>
-    <div className="book-container" >
-      { books.length && createBookElement()}
-    </div>
+      <div className="book-container" >
+        { books.length && createBookElement()}
+      </div>
     </>
   )
 

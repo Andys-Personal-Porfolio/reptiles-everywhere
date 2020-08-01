@@ -15,7 +15,7 @@ const EmbeddedBook = ({bookToRender}) => {
         style={{ border: 0 }} 
         src={previewLink} 
         width="600"
-        height="600" 
+        height="700 " 
         role="document"
         title={bookToRender.volumeInfo.title}
       ></iframe> }
