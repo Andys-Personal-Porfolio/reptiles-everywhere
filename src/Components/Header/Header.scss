@@ -1,7 +1,10 @@
 @import '../App/App.scss';
 
 header {
-  background: rgb(210, 212, 42);
+  border: 5px solid $black-green;
+  background: $white-green;
+  padding: 2vh;
+  margin-block-end: 4vh;
 }
 
 .active {

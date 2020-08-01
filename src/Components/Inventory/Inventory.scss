@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5vh;
+  justify-items: center;
 }
 
 .book-title {
@@ -14,10 +15,16 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 5px;
+  border: 5px solid $black-green;
   background: $white-green;
+  width: 40vw;
 }
 
 img {
   height: 20vh;
+}
+
+.book-description {
+  display: flex;
 }
