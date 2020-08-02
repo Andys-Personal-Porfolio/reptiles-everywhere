@@ -10,7 +10,6 @@ function App() {
   const location = useLocation();
   const category = location ? location.pathname.split('/')[1] : 'reptiles'
   const [books, setBooks] = useState({})
-  const [singleBooks, setSingleBooks] = useState([])
   const [error, setError] = useState('')
   const [searchCritera, setSearchCriteria] = useState(category || 'reptiles')
   const [loading, setLoading] = useState(true)
@@ -29,7 +28,7 @@ function App() {
 
   
 
-  const getSingleBooks = () => {
+  const getSingleBooks = (categoryGiven) => {
     const urls = books.map(book => book.selfLink)
     urls.forEach(async (url) => await getSingleBook(url))
   }
@@ -37,7 +36,9 @@ function App() {
   const getSingleBook = async (url) => {
     try {
       const singleBook = await fetchSingleBook(url)
-      setSingleBooks(s => [...s, singleBook.volumeInfo.imageLinks])
+      const bookToAddImg = books.find(book => book.id === singleBook.id)
+      const booksWithImgs = { ...bookToAddImg, coverImg: singleBook.volumeInfo.imageLinks}
+      setBooks(s => [...s, booksWithImgs])
     } catch (error) {
       setError(error)
     }
@@ -51,7 +52,6 @@ function App() {
     <main className="App">
     {error && <h2 className="error-message">{error.message}</h2>}
       <Header 
-      setSingleBooks={setSingleBooks}
       getSingleBooks={getSingleBooks}
       searchBooks = {searchBooks}/>
       {books.length && (
@@ -63,7 +63,7 @@ function App() {
             if (viewType !== "EmbeddedBook"){
               return (
               <Inventory 
-              images={singleBooks}
+              setBooks={setBooks}
               books={books} 
               category={category}
               getSingleBooks={getSingleBooks}

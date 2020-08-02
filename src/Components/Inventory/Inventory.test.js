@@ -11,7 +11,13 @@ describe('Inventory', () => {
   const mockBookTitle = "All About the Reptiles of the World - Animal Books | Children's Animal Books"
 
   it('should render book titles', () => {
-    const { getByRole } = render(<MemoryRouter><Inventory books={reptileBooksMockData.items} /></MemoryRouter>)
+    const { getByRole } = render(<MemoryRouter>
+      <Inventory 
+      images={singleBooks}
+      books={reptileBooksMockData.items} 
+      category={'reptiles'}
+      getSingleBooks={jest.fn()}
+      viewType={'SummaryView'}/></MemoryRouter>)
     const bookTitle = getByRole('heading', { name: "Smart Kids: Reptiles and Amphibians" })
     const bookTitle2 = getByRole('heading', { name: mockBookTitle })
     expect(bookTitle).toBeInTheDocument()

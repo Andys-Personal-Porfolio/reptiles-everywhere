@@ -2,13 +2,12 @@ import React from 'react'
 import './Header.scss'
 import { NavLink, useLocation } from 'react-router-dom'
 
-const Header = ({ searchBooks, getSingleBooks, setSingleBooks}) => {
+const Header = ({ searchBooks, getSingleBooks}) => {
   const location = useLocation()
   const viewType = location.pathname.split('/')[2]
  
 
   const updateLocation = (event) => {
-    setSingleBooks([])
     const category = event.target.innerHTML
     viewType === "CoverView" ? getSingleBooks(category) : searchBooks(category)
   }
