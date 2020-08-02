@@ -429,3 +429,119 @@ export const turtleBooksMockData = {
   }
 }]
 }
+
+export const allAboutReptilesMockData = {
+  "kind": "books#volume",
+  "id": "TtA4DwAAQBAJ",
+  "etag": "9cM3lU+lquo",
+  "selfLink": "https://www.googleapis.com/books/v1/volumes/TtA4DwAAQBAJ",
+  "volumeInfo": {
+    "title": "All About the Reptiles of the World - Animal Books | Children's Animal Books",
+    "authors": [
+      "Baby Professor"
+    ],
+    "publisher": "Speedy Publishing LLC",
+    "publishedDate": "2017-06-15",
+    "description": "Let’s talk about the reptiles. What kind of animals are they? What are the features that make them unique from all the other animals? What are the most popular reptiles in the world? All these questions will be asked when you read a copy of this educational animal book for children. Improve your child’s knowledge of the outside world. Encourage him/her to read today!",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_10",
+        "identifier": "1541939603"
+      },
+      {
+        "type": "ISBN_13",
+        "identifier": "9781541939608"
+      }
+    ],
+    "readingModes": {
+      "text": true,
+      "image": true
+    },
+    "pageCount": 64,
+    "printedPageCount": 64,
+    "printType": "BOOK",
+    "categories": [
+      "Young Adult Nonfiction / Science & Nature / Zoology",
+      "Nature / Animals / Reptiles & Amphibians",
+      "Science / Life Sciences / Zoology / Ichthyology & Herpetology",
+      "Pets / Reptiles, Amphibians & Terrariums",
+      "Juvenile Nonfiction / Science & Nature / Zoology",
+      "Juvenile Fiction / Animals / Reptiles & Amphibians",
+      "Juvenile Nonfiction / Animals / Reptiles & Amphibians",
+      "Science / Life Sciences / Zoology / General"
+    ],
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "1.1.1.0.preview.3",
+    "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+    },
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=TtA4DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE71GTShiK0m6h440yEoLF-Uatqoel8ro9NfCBQdY8dakf7ynQ3hQXerf3tVNnCVwoupkVVaE9DREHoPkF6iTbinxte5iCOUoZoe8BkL_ITnr90PwgHIzGF5_1_tTPfWE7ALCElxJ&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=TtA4DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72yjCvfdUJJxFsjNjHm8OGwENY_q6zTANI8hjh1h2Ht6lhl6UJxOpu4X-2-2LeOhhy6-UOxPMgucDCojmpMfhoi0Qpn3_KkdK_Qkm8BGedfWPC3FgEMQQFEf-k_DANgmA6yrpyS&source=gbs_api",
+      "small": "http://books.google.com/books/content?id=TtA4DwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE70rYpixZwWeSfKaVg07UixUPVnDnX3B8Yx24ODV4H2nrd9WHA5EcoeK2ZH8BKCB__GpSYB5CnEeTHbu5Y_TTPEMDeJtEwuYB8K-kfWrF2GosvqJHcFPAnmZWbuBwK1oQucS2Tuu&source=gbs_api",
+      "medium": "http://books.google.com/books/content?id=TtA4DwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE71FpT5Didnky2-5_X_nnqgwsTZHek1Y5eAvHGRDuxqXEYEkSSQdV25Y43Qk5bpNPk7ylKo_bBnJTR2JRpJJlORe5MNdrmx0XqCdyD6Xi8sYvZLQGHKGk_udQpq2rJ1HZTgCzM-k&source=gbs_api",
+      "large": "http://books.google.com/books/content?id=TtA4DwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE71laahHhMnhZQPDH3IT7EXXRFkGiltqpK7CjykUhZaqrQGi-OLgA_3J7zhDAUWfAEH4fSFnGBmLpkyZlgY7hRmfllFxY_w1p51TPG6UFYJqxz1ZSR5Iad-XfJ2YxeNbzKQQBaTS&source=gbs_api",
+      "extraLarge": "http://books.google.com/books/content?id=TtA4DwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE71x7cEKLqbexfJTe9Z-kBHFmpoqU_9PGO7foEnxChepjFO9eNaSNQWTJhB7jzBWEiV3nuyFxHbIF5nX8jnzZbt31j0RACeAfTmDvfnaUGapFkzOs0ucGqzZOeNdsH8OElmYUIzn&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=TtA4DwAAQBAJ&hl=&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=TtA4DwAAQBAJ&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=TtA4DwAAQBAJ"
+  },
+  "layerInfo": {
+    "layers": [
+      {
+        "layerId": "geo",
+        "volumeAnnotationsVersion": "3"
+      }
+    ]
+  },
+  "saleInfo": {
+    "country": "US",
+    "saleability": "FOR_SALE",
+    "isEbook": true,
+    "listPrice": {
+      "amount": 3.99,
+      "currencyCode": "USD"
+    },
+    "retailPrice": {
+      "amount": 3.99,
+      "currencyCode": "USD"
+    },
+    "buyLink": "https://play.google.com/store/books/details?id=TtA4DwAAQBAJ&rdid=book-TtA4DwAAQBAJ&rdot=1&source=gbs_api",
+    "offers": [
+      {
+        "finskyOfferType": 1,
+        "listPrice": {
+          "amountInMicros": 3990000,
+          "currencyCode": "USD"
+        },
+        "retailPrice": {
+          "amountInMicros": 3990000,
+          "currencyCode": "USD"
+        },
+        "giftable": true
+      }
+    ]
+  },
+  "accessInfo": {
+    "country": "US",
+    "viewability": "PARTIAL",
+    "embeddable": true,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+      "isAvailable": true,
+      "acsTokenLink": "http://books.google.com/books/download/All_About_the_Reptiles_of_the_World_Anim-sample-epub.acsm?id=TtA4DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "pdf": {
+      "isAvailable": true,
+      "acsTokenLink": "http://books.google.com/books/download/All_About_the_Reptiles_of_the_World_Anim-sample-pdf.acsm?id=TtA4DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=TtA4DwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "SAMPLE",
+    "quoteSharingAllowed": false
+  }
+}

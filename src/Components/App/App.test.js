@@ -2,22 +2,32 @@ import React from 'react'
 import { render, waitFor, fireEvent } from '@testing-library/react'
 import App from './App'
 import { MemoryRouter } from 'react-router-dom';
-import { fetchBooks } from '../../ApiCalls'
-import { reptileBooksMockData, turtleBooksMockData}  from './fetchBooksMockData'
+import { fetchBooks, fetchSingleBook } from '../../ApiCalls'
+import { 
+  reptileBooksMockData, 
+  turtleBooksMockData,
+  allAboutReptilesMockData}  from './fetchBooksMockData'
+import { act } from 'react-dom/test-utils';
 
 jest.mock("../../ApiCalls");
 
 
 describe('App', () => {
+  global.window = Object.create(window);
+  const url = "http://localhost:3000/reptiles/SummaryView";
+
+  Object.defineProperty(window, 'location', {
+    value: {
+      href: url
+    }
+  })
+  it('should have a location on load', async () => {
+    const { getByRole } = render(<MemoryRouter><App /></MemoryRouter>)
+    waitFor(() => expect(window.location.href).toEqual(url));
+  })
 
   fetchBooks.mockResolvedValue(reptileBooksMockData)
   const mockBookTitle = "All About the Reptiles of the World - Animal Books | Children's Animal Books";
-
-  it('should render website title Reptiles Everywhere! on load', async () => {
-    const { getByRole } = render(<MemoryRouter><App /></MemoryRouter>)
-    const title = await waitFor(() => getByRole('heading', {name:'Reptiles Everywhere!'}))
-    expect(title).toBeInTheDocument()
-  })
 
   it('should render reptile books titles on load', async () => {
     const { getByRole } = render(<MemoryRouter><App /></MemoryRouter>)
@@ -50,7 +60,7 @@ describe('App', () => {
   })
 
   it('should render covers of books on load', async () => {
-    const { getByRole, getAllByRole} = render(<MemoryRouter><App/></MemoryRouter>)
+    const { getByRole } = render(<MemoryRouter><App/></MemoryRouter>)
     const coverImg = await waitFor(() => getByRole('img', { name: "Smart Kids: Reptiles and Amphibians cover"}))
     const coverImg2 = await waitFor(() => getByRole('img', { name: mockBookTitle + " cover" }))
 
@@ -96,6 +106,35 @@ describe('App', () => {
     const startReadingBtn2 = await waitFor(() => getByRole('button', { name: "Start Reading " + mockBookTitle }))
     expect(bookTitle2).toBeInTheDocument()
     expect(startReadingBtn2).toBeInTheDocument()
+  })
+
+  it('should be able to click cover view button and see images of medium sized covers', async () => {
+    fetchSingleBook.mockResolvedValue(allAboutReptilesMockData)
+    const { getAllByRole, getByRole } = render(<MemoryRouter><App /></MemoryRouter>)
+    const url = "http://localhost:3000/reptiles/SummaryView";
+    await waitFor(() => expect(window.location.href).toEqual(url));
+
+    const bookCoverBtn = await waitFor(() => getByRole('button', { name: 'Book Covers' }))
+
+    expect(bookCoverBtn).toBeInTheDocument()
+
+    fireEvent.click(bookCoverBtn)
+    const summariesBtn = await waitFor(() => getByRole('button', { name: 'Summaries' }))
+    const mediumCovers = await waitFor(() => getAllByRole('img', {name: mockBookTitle + " cover"}))
+    const reptileBooksLabel = await waitFor(() => getByRole('heading', { name: 'Reptile books:' }))
+    const url2 = "http://localhost:3000/reptiles/CoverView";
+    waitFor(() => expect(window.location.href).toEqual(url2));
+    expect(summariesBtn).toBeInTheDocument()
+    expect(reptileBooksLabel).toBeInTheDocument()
+    expect(mediumCovers.length).toBe(2)
+
+    fireEvent.click(summariesBtn)
+    const url3 = "http://localhost:3000/reptiles/SummaryView";
+    await waitFor(() => expect(window.location.href).toEqual(url3));
+    const bookCoverBtn2 = await waitFor(() => getByRole('button', { name: 'Book Covers' }))
+    expect(bookCoverBtn2).toBeInTheDocument()
+    
+    
   })
 
 })
