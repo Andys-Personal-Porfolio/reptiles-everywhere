@@ -31,7 +31,7 @@ function App() {
 
   const getSingleBooks = () => {
     const urls = books.map(book => book.selfLink)
-    urls.forEach(url => getSingleBook(url))
+    urls.forEach(async (url) => await getSingleBook(url))
   }
 
   const getSingleBook = async (url) => {

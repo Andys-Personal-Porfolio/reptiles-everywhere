@@ -5,8 +5,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 const Header = ({ searchBooks, getSingleBooks, setSingleBooks}) => {
   const location = useLocation()
   const viewType = location.pathname.split('/')[2]
-  const category = location.pathname.split('/')[1]
-  const upperCaseCategory = category[0].toUpperCase() + category.slice(1)
+ 
 
   const updateLocation = (event) => {
     setSingleBooks([])
@@ -25,11 +24,10 @@ const Header = ({ searchBooks, getSingleBooks, setSingleBooks}) => {
     ]
     const navLinks = categories.map((category,i) => {
       return (
-        <section className="button-and-image">
+        <section className="button-and-image" key={category + 'button'}>
         <img src={imgSrcs[i]} alt={category} />
         <NavLink 
           to={`/${category}/${viewType}`} 
-          key={category + 'button'}
           activeClassName='active'>
           <button 
           onClick={(event) => updateLocation(event)}>
@@ -46,7 +44,7 @@ const Header = ({ searchBooks, getSingleBooks, setSingleBooks}) => {
 
   return (
     <header>
-      <h1>{upperCaseCategory} Everywhere!</h1>
+      <h1>Reptiles Everywhere!</h1>
       <div className="reptile-image">{makeNavLinks()}</div>
     </header>
   )
