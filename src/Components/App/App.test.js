@@ -27,8 +27,8 @@ describe('App', () => {
     expect(bookTitle2).toBeInTheDocument()
   })
 
-  it('should render reptile books titles on load and change to tutle books on click, and change back on click to reptiles', async () => {
-    const { getByRole, debug } = render(<MemoryRouter><App /></MemoryRouter>)
+  it('should render reptile books titles on load and change to turtle books on click, and change back to reptiles on click', async () => {
+    const { getByRole } = render(<MemoryRouter><App /></MemoryRouter>)
 
     const reptileTitle = await waitFor(() => getByRole('heading', { name:"Smart Kids: Reptiles and Amphibians"}))
     expect(reptileTitle).toBeInTheDocument()
@@ -52,10 +52,10 @@ describe('App', () => {
   it('should render covers of books on load', async () => {
     const { getByRole, getAllByRole} = render(<MemoryRouter><App/></MemoryRouter>)
     const coverImg = await waitFor(() => getByRole('img', { name: "Smart Kids: Reptiles and Amphibians cover"}))
-    const covers = await waitFor(() => getAllByRole('img'))
+    const coverImg2 = await waitFor(() => getByRole('img', { name: mockBookTitle + " cover" }))
 
-    expect(covers.length).toEqual(2)
     expect(coverImg).toBeInTheDocument()
+    expect(coverImg2).toBeInTheDocument()
   })
 
   it('should render error message if fetch returns error', async () => {

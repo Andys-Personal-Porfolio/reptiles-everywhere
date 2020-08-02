@@ -8,22 +8,18 @@ import { Route, Redirect, useLocation} from 'react-router-dom'
 
 function App() {
   const location = useLocation();
-  const category = location.pathname.split('/')[1]
+  const category = location ? location.pathname.split('/')[1] : 'reptiles'
   const [books, setBooks] = useState({})
-  const [singleBooks, setSingleBooks] = useState({})
-  const [error, setError] = useState({})
+  const [singleBooks, setSingleBooks] = useState([])
+  const [error, setError] = useState('')
   const [searchCritera, setSearchCriteria] = useState(category || 'reptiles')
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
     const getBooks = async () => {
       try {
         const data = await fetchBooks(searchCritera)
         setBooks(data.items)
-        // const singleBooks = books.map(async (book) => {
-        //   const singleBook = await fetchSingleBook()
-        //   return singleBook
-        // })
-
-        // setSingleBooks(singleBooks)
+        setLoading(false)
       } catch (error) {
         setError(error)
       }
@@ -31,26 +27,49 @@ function App() {
     getBooks()
   }, [searchCritera])
 
+  
+
+  const getSingleBooks = () => {
+    const urls = books.map(book => book.selfLink)
+    urls.forEach(async (url) => await getSingleBook(url))
+  }
+
+  const getSingleBook = async (url) => {
+    try {
+      const singleBook = await fetchSingleBook(url)
+      setSingleBooks(s => [...s, singleBook.volumeInfo.imageLinks])
+    } catch (error) {
+      setError(error)
+    }
+  }
+
   const searchBooks = (id) => {
     setSearchCriteria(id) 
   }
 
-  const getSingleBook = async () => {
-    console.log('no')
-    const singleBook = await fetchSingleBook();
-    return singleBook
-  }
-
   return (
-    <div className="App">
-      <Header searchBooks = {searchBooks}/>
+    <main className="App">
+    {error && <h2 className="error-message">{error.message}</h2>}
+      <Header 
+      setSingleBooks={setSingleBooks}
+      getSingleBooks={getSingleBooks}
+      searchBooks = {searchBooks}/>
       {books.length && (
         <Route
-          exact
-          path="/:category"
+          path="/:category/:viewType"
           render={({ match }) => {
             const { category } = match.params
-            return <Inventory books={books} category={category}/> 
+            const { viewType } = match.params
+            if (viewType !== "EmbeddedBook"){
+              return (
+              <Inventory 
+              images={singleBooks}
+              books={books} 
+              category={category}
+              getSingleBooks={getSingleBooks}
+              viewType = {viewType}
+              /> )
+            }
           }}
         />
       )}
@@ -64,15 +83,17 @@ function App() {
           if(!bookToRender) {
             searchBooks(category)
           }
-          return (<EmbeddedBook bookToRender={bookToRender} getSingleBook={getSingleBook}/>)
+          return (
+          <EmbeddedBook 
+            bookToRender={bookToRender} 
+            getSingleBook={getSingleBook}/>)
         }}
       />}
       <Route path='/'>
-        <Redirect to='/reptiles' />
+        <Redirect to='/reptiles/SummaryView' />
       </Route>
-      {error && <h2 className="error-message">{error.message}</h2>}
-      <div className="parasol"></div>
-    </div>
+      {loading && !error && <section>Loading...</section>}
+    </main>
   );
 }
 

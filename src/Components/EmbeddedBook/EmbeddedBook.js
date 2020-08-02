@@ -1,12 +1,12 @@
 import React from 'react'
 import { useHistory} from 'react-router-dom' 
-
+import './EmbeddedBook.scss'
 const EmbeddedBook = ({bookToRender}) => {
   const previewLink = bookToRender.volumeInfo.previewLink + '&output=embed'
   let history = useHistory();
 
   return (
-    <>
+    <section className="embedded-book-section">
         <button 
         aria-label={`Go Back To Home Page`}
         onClick= {() => history.goBack()}>
@@ -23,7 +23,7 @@ const EmbeddedBook = ({bookToRender}) => {
         role="document"
         title={bookToRender.volumeInfo.title}
       ></iframe> }
-    </>
+    </section>
   )
   
 }

@@ -1,1 +1,8 @@
 @import '../App/App.scss';
+
+.embedded-book-section {
+  display: inline-grid;
+  button {
+    padding-bottom: 5vh;
+  }
+}
