@@ -27,30 +27,6 @@
   width: 40vw;
   justify-content: space-between;
   box-shadow: 1px 1px 2px black;
- button {
-    display:inline-block;
-    padding:0.46em 1.6em;
-    padding-bottom: 1.4em;
-    height: 5vh;
-    border:0.1em solid #000000;
-    margin:0 0.2em 0.2em 0;
-    border-radius:0.12em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Roboto',sans-serif;
-    font-weight:800;
-    font-size: 20px;
-    color:white;
-    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-    text-align:center;
-    transition: all 0.15s;
-    background-color:#2ea44f;
-    &:hover{
-      text-shadow: 0 0 2em rgba(255,255,255,1);
-      color:#FFFFFF;
-      border-color:#FFFFFF;
-    }
-  }
 }
 
 .book-description {
@@ -81,7 +57,6 @@ button {
     margin:0 0.2em 0.2em 0;
     border-radius:0.12em;
     box-sizing: border-box;
-    text-decoration:none;
     font-family:'Roboto',sans-serif;
     font-weight:800;
     font-size: 20px;

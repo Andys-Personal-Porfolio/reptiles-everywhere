@@ -49,6 +49,7 @@ function App() {
 
   return (
     <main className="App">
+    {error && <h2 className="error-message">{error.message}</h2>}
       <Header 
       setSingleBooks={setSingleBooks}
       getSingleBooks={getSingleBooks}
@@ -91,7 +92,6 @@ function App() {
       <Route path='/'>
         <Redirect to='/reptiles/SummaryView' />
       </Route>
-      {error && <h2 className="error-message">{error.message}</h2>}
       {loading && !error && <section>Loading...</section>}
     </main>
   );

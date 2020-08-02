@@ -7,22 +7,7 @@ header {
   padding: 2vh;
   margin-block-end: 4vh;
   button {
-    display: inline-block;
-    padding: 0.46em 1.6em;
-    height: 5vh;
-    border: 0.1em solid #000000;
-    margin: 0 0.2em 0.2em 0;
-    padding-bottom: 1.4em;
-    border-radius: 0.12em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto',sans-serif;
-    font-weight: 800;
-    font-size: 20px;
-    color: #000000;;
-    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
-    text-align: center;
-    transition: all 0.15s;
+    color: #000000;
     background-color: #D6C73C;
   }
 }
@@ -37,4 +22,21 @@ h1 {
   font-size: 80px;
   margin-block-start: 0em;
   margin-block-end: 0.33em;
+}
+
+.reptile-image {
+  button {
+    height: 10vh;
+  }
+  img {
+    height: 10vh;
+    width: 19vw;
+  }
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-and-image {
+  display: flex;
+  flex-flow: column;
 }
