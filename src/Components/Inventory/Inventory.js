@@ -7,6 +7,7 @@ const Inventory = ({ books, category, singleBooks, getSingleBooks, viewType}) =>
   const upperCaseCategory = category[0].toUpperCase() + category.slice(1) 
   const categorySingular = upperCaseCategory.slice(0, upperCaseCategory.length -1)
   const images = singleBooks.map(singleBook => singleBook.volumeInfo.imageLinks)
+  const booksToRender = viewType === "CoverView" ? singleBooks : books;
   return (
     <>
       <h2> {categorySingular} books:</h2>
@@ -17,7 +18,12 @@ const Inventory = ({ books, category, singleBooks, getSingleBooks, viewType}) =>
         <button className="cover-btn">Summaries</button>
       </Link>}
       <div className="book-container" >
-        {books.length && <BookCard books={books} category={category} images={images} viewType={viewType} />}
+        {books.length && 
+        <BookCard 
+        books={booksToRender} 
+        category={category} 
+        images={images} 
+        viewType={viewType} />}
       </div>
     </>
   )
