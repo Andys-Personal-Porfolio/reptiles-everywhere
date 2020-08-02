@@ -28,7 +28,7 @@ describe('App', () => {
   })
 
   it('should render reptile books titles on load and change to tutle books on click, and change back on click to reptiles', async () => {
-    const { getByRole, debug } = render(<MemoryRouter><App /></MemoryRouter>)
+    const { getByRole } = render(<MemoryRouter><App /></MemoryRouter>)
 
     const reptileTitle = await waitFor(() => getByRole('heading', { name:"Smart Kids: Reptiles and Amphibians"}))
     expect(reptileTitle).toBeInTheDocument()

@@ -34,7 +34,6 @@ const BookCard = ({ books, category, images, getSingleBooks, viewType }) => {
     const textSnippet = book.searchInfo ? book.searchInfo.textSnippet : "No description available!";
     return (
       <div key={i} className="book-info">
-
         {viewType === 'CoverView' && images[i] && createCoverView(book,i)}
         {viewType === 'SummaryView' && createSummaryView(book, textSnippet)}
 

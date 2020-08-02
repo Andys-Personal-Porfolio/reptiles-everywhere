@@ -8,23 +8,26 @@ import { Route, Redirect, useLocation} from 'react-router-dom'
 
 function App() {
   const location = useLocation();
-  const category = location.pathname.split('/')[1]
+  const category = location ? location.pathname.split('/')[1] : 'reptiles'
   const [books, setBooks] = useState({})
   const [singleBooks, setSingleBooks] = useState([])
   const [error, setError] = useState('')
   const [searchCritera, setSearchCriteria] = useState(category || 'reptiles')
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
+    const getBooks = async () => {
+      try {
+        const data = await fetchBooks(searchCritera)
+        setBooks(data.items)
+        setLoading(false)
+      } catch (error) {
+        setError(error)
+      }
+    }
     getBooks()
   }, [searchCritera])
 
-  const getBooks = async () => {
-    try {
-      const data = await fetchBooks(searchCritera)
-      setBooks(data.items)
-    } catch (error) {
-      setError(error)
-    }
-  }
+  
 
   const getSingleBooks = () => {
     const urls = books.map(book => book.selfLink)
@@ -45,8 +48,11 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header searchBooks = {searchBooks}/>
+    <main className="App">
+      <Header 
+      setSingleBooks={setSingleBooks}
+      getSingleBooks={getSingleBooks}
+      searchBooks = {searchBooks}/>
       {books.length && (
         <Route
           path="/:category/:viewType"
@@ -86,8 +92,8 @@ function App() {
         <Redirect to='/reptiles/SummaryView' />
       </Route>
       {error && <h2 className="error-message">{error.message}</h2>}
-      <div className="parasol"></div>
-    </div>
+      {loading && !error && <section>Loading...</section>}
+    </main>
   );
 }
 

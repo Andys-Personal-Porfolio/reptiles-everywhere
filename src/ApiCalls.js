@@ -30,12 +30,12 @@ export const fetchBooks = async (searchCriteria) => {
     const data = await response.json()
     return data
   } catch (error) {
-    console.log(error)
+    return error
   }
 }
 
 export const fetchSingleBook = async (url) => {
-  console.log(url)
+  console.log('yay')
   try {
     const response = await fetch(url)
     const data = await response.json()
