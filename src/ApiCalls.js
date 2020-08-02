@@ -13,14 +13,13 @@ export const fetchBooks = async (searchCriteria) => {
   const urlParts = 
     [`https://www.googleapis.com/`,
     `books/v1/volumes?`,
-    `q=intitle:${searchCriteria}`,
+    `q=${searchCriteria}`,
     `+nonfiction+children+books`,
     `&printType=books`,
     `&filter=partial`,
     `&startIndex=0`,
     `&maxResults=40`,
-    `&safe=active`,
-    `&maxAllowedMaturityRating=not-mature`]
+    ]
 
   if (searchCriteria === 'turtles') {
     urlParts.splice(3, 0, '+-mutant+-Michelangelo')
@@ -35,9 +34,10 @@ export const fetchBooks = async (searchCriteria) => {
   }
 }
 
-export const fetchSingleBook = async () => {
+export const fetchSingleBook = async (url) => {
+  console.log(url)
   try {
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes/TtA4DwAAQBAJ`)
+    const response = await fetch(url)
     const data = await response.json()
     return data
   } catch (error) {

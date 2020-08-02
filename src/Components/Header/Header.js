@@ -9,7 +9,7 @@ const Header = ({searchBooks}) => {
     const navLinks = categories.map(category => {
       return (
         <NavLink 
-          to={`/${category}`} 
+          to={`/${category}/SummaryView`} 
           key={category + 'button'}
           activeClassName='active'>
           <button onClick={() => searchBooks(category)}>{category}</button>
