@@ -37,7 +37,7 @@ function App() {
   const getSingleBook = async (url) => {
     try {
       const singleBook = await fetchSingleBook(url)
-      setSingleBooks(s => [...s, singleBook.volumeInfo.imageLinks])
+      setSingleBooks(s => [...s, singleBook])
     } catch (error) {
       setError(error)
     }
@@ -63,7 +63,7 @@ function App() {
             if (viewType !== "EmbeddedBook"){
               return (
               <Inventory 
-              images={singleBooks}
+              singleBooks={singleBooks}
               books={books} 
               category={category}
               getSingleBooks={getSingleBooks}
