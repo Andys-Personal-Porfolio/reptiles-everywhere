@@ -2,7 +2,7 @@ import React from 'react'
 import './BookCard.scss'
 import { Link } from 'react-router-dom'
 
-const BookCard = ({ books, category, images, getSingleBooks, viewType }) => {
+const BookCard = ({ books, category, viewType }) => {
   const filteredBooks = books.filter(book => book.accessInfo.embeddable === true)
 
   const createSummaryView = (book, textSnippet) => {
@@ -21,10 +21,10 @@ const BookCard = ({ books, category, images, getSingleBooks, viewType }) => {
     </div>)
   }
 
-  const createCoverView = (book,i) => {
+  const createCoverView = (book) => {
     return (
       <img
-        src={images[i].medium}
+        src={book.coverImg.medium}
         alt={book.volumeInfo.title + " cover"}
       />
     )
@@ -33,8 +33,8 @@ const BookCard = ({ books, category, images, getSingleBooks, viewType }) => {
   return filteredBooks.map((book, i) => {
     const textSnippet = book.searchInfo ? book.searchInfo.textSnippet : "No description available!";
     return (
-      <div key={i} className="book-info">
-        {viewType === 'CoverView' && images[i] && createCoverView(book,i)}
+      <div key={i+ 'book-info'} className="book-info">
+        {viewType === 'CoverView' && createCoverView(book,i)}
         {viewType === 'SummaryView' && createSummaryView(book, textSnippet)}
 
         <Link to={`/${category}/EmbeddedBook/${book.id}`} style={{textDecoration: "none"}}>
