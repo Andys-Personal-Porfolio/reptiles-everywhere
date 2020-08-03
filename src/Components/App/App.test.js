@@ -107,6 +107,30 @@ describe('App', () => {
     expect(startReadingBtn2).toBeInTheDocument()
   })
 
+  it('should go to the embedded book after going to cover view page ', async () => {
+    const { getByRole, getAllByRole } = render(<MemoryRouter><App /></MemoryRouter>)
+    fetchSingleBook.mockResolvedValue(allAboutReptilesMockData)
+
+    const bookCoverBtn = await waitFor(() => getByRole('button', { name: 'Book Covers' }))
+    expect(bookCoverBtn).toBeInTheDocument()
+
+    fireEvent.click(bookCoverBtn)
+
+    const mediumCovers = await waitFor(() => getAllByRole('img', { name: mockBookTitle + " cover" }))
+    expect(mediumCovers.length).toBe(2)
+
+    const startReadingBtn = await waitFor(() => getAllByRole('button', { name: "Start Reading " + mockBookTitle }))
+    expect(startReadingBtn[0]).toBeInTheDocument()
+
+    fireEvent.click(startReadingBtn[0])
+    const embeddedBook = await waitFor(() => getByRole('document', { title: mockBookTitle }))
+    const goBackBtn = await waitFor(() => getByRole('button', { name: 'Go Back To Home Page' }))
+    expect(embeddedBook).toBeInTheDocument()
+
+    expect(goBackBtn).toBeInTheDocument()
+  })
+
+
   it('should be able to click cover view button and see images of medium sized covers', async () => {
     fetchSingleBook.mockResolvedValue(allAboutReptilesMockData)
     const { getAllByRole, getByRole } = render(<MemoryRouter><App /></MemoryRouter>)
@@ -133,30 +157,6 @@ describe('App', () => {
     await waitFor(() => expect(window.location.href).toEqual(url3));
     expect(bookCoverBtn2).toBeInTheDocument()
     
-  })
-
-  it.skip('should go to the embedded book after going to cover view page ', async () => {
-    //This test works if previous test is skipped
-    const { getByRole, getAllByRole } = render(<MemoryRouter><App /></MemoryRouter>)
-    fetchSingleBook.mockResolvedValue(allAboutReptilesMockData)
-    
-    const bookCoverBtn = await waitFor(() => getByRole('button', { name: 'Book Covers' }))
-    expect(bookCoverBtn).toBeInTheDocument()
-    
-    fireEvent.click(bookCoverBtn)
-    
-    const mediumCovers = await waitFor(() => getAllByRole('img', { name: mockBookTitle + " cover" }))
-    expect(mediumCovers.length).toBe(2)
-
-    const startReadingBtn = await waitFor(() => getAllByRole('button', { name: "Start Reading " + mockBookTitle }))
-    expect(startReadingBtn[0]).toBeInTheDocument()
-
-    fireEvent.click(startReadingBtn[0])
-    const embeddedBook = await waitFor(() => getByRole('document', { title: mockBookTitle }))
-    const goBackBtn = await waitFor(() => getByRole('button', { name: 'Go Back To Home Page' }))
-    expect(embeddedBook).toBeInTheDocument()
-
-    expect(goBackBtn).toBeInTheDocument()
   })
 
 

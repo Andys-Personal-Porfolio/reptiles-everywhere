@@ -11,11 +11,17 @@ import turtle from '../../Assets/turtle-src.png'
 const Header = ({ searchBooks, getSingleBooks}) => {
   const location = useLocation()
   const viewType = location.pathname.split('/')[2]
+  const urlCategory = location.pathname.split('/')[1]
  
 
   const updateLocation = (event) => {
     const category = event.target.innerHTML
-    viewType === "CoverView" ? getSingleBooks(category) : searchBooks(category)
+    if(viewType === "CoverView" && category === urlCategory) {
+      getSingleBooks(category)
+    } else {
+     searchBooks(category)
+    }
+
   }
 
   const makeNavLinks = (images) => {
