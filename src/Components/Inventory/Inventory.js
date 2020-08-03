@@ -24,7 +24,6 @@ const Inventory = ({ books, category, singleBooks, getSingleBooks, viewType, set
       <Link to= {`/${category}/SummaryView`}>
         <button className="cover-btn">Summaries</button>
       </Link>}
-      <h1> {categorySingular} books:</h1>
       <div className="book-container" >
         {books.length && 
         <BookCard 
