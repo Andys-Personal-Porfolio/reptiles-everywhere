@@ -9,10 +9,12 @@ import { Route, Redirect, useLocation} from 'react-router-dom'
 function App() {
   const location = useLocation();
   const category = location ? location.pathname.split('/')[1] : 'reptiles'
+  const viewType = location ? location.pathname.split('/')[2] : 'SummaryView'
   const [books, setBooks] = useState({})
   const [error, setError] = useState('')
-  const [searchCritera, setSearchCriteria] = useState(category || 'reptiles')
+  const [searchCritera, setSearchCriteria] = useState(category)
   const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     const getBooks = async () => {
       try {
