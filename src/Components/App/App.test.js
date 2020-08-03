@@ -7,7 +7,6 @@ import {
   reptileBooksMockData, 
   turtleBooksMockData,
   allAboutReptilesMockData}  from './fetchBooksMockData'
-import { act } from 'react-dom/test-utils';
 
 jest.mock("../../ApiCalls");
 
@@ -129,12 +128,26 @@ describe('App', () => {
     expect(mediumCovers.length).toBe(2)
 
     fireEvent.click(summariesBtn)
+    const bookCoverBtn2 = await waitFor(() => getByRole('button', { name: 'Book Covers' }))
     const url3 = "http://localhost:3000/reptiles/SummaryView";
     await waitFor(() => expect(window.location.href).toEqual(url3));
-    const bookCoverBtn2 = await waitFor(() => getByRole('button', { name: 'Book Covers' }))
     expect(bookCoverBtn2).toBeInTheDocument()
     
-    
+  })
+
+  it.skip('should render error message if fetchSingleBooks fetch returns error', async () => {
+    // fetchSingleBook.mockImplementationOnce(() => {
+    //   throw new Error('Error: This is a cool test')
+    // })
+    const bookCoverBtn = await waitFor(() => getByRole('button', { name: 'Book Covers' }))
+    expect(bookCoverBtn).toBeInTheDocument()
+
+    fireEvent.click(bookCoverBtn)
+    const { getByRole } = render(<MemoryRouter><App /></MemoryRouter>)
+
+    // const errorMessage = await waitFor(() => getByRole('heading', { name: "Error: This is a cool test" }))
+    // expect(errorMessage).toBeInTheDocument()
+
   })
 
 })

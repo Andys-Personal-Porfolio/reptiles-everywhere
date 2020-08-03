@@ -14,10 +14,6 @@
   color:black;
 }
 
-.cover-btn {
-  display: inline;
-}
-
 .book-info {
   display: flex;
   flex-flow: column;
@@ -40,9 +36,11 @@
 .text-snippet {
   color:$dark-green;
   text-align: left;
-  margin-right: 2em;
-  margin-left: 3em;
-  font-size: 20px;
+  margin-right: 1em;
+  margin-left: 1em;
+  font-size: 24px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
 a {
   text-decoration: none;
@@ -71,6 +69,11 @@ button {
       border-color:#FFFFFF;
     }
   }
+
+.cover-btn {
+  display: inline;
+  font-size: 40px;
+}
 
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
 @media (min-width:481px)  { 

@@ -9,7 +9,6 @@ const Inventory = ({ books, category, singleBooks, getSingleBooks, viewType, set
 
   return (
     <>
-      <h2> {categorySingular} books:</h2>
       {viewType === 'SummaryView' && <Link to= {`/${category}/CoverView`}>
         <button 
         className="cover-btn" 
@@ -22,6 +21,7 @@ const Inventory = ({ books, category, singleBooks, getSingleBooks, viewType, set
       {viewType === 'CoverView' && <Link to= {`/${category}/SummaryView`}>
         <button className="cover-btn">Summaries</button>
       </Link>}
+      <h1> {categorySingular} books:</h1>
       <div className="book-container" >
         {books.length && 
         <BookCard 
