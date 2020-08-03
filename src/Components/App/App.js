@@ -52,30 +52,31 @@ function App() {
 
   return (
     <main className="App">
-    {error && <h2 className="error-message">{error.message}</h2>}
-      <Header 
-      getSingleBooks={getSingleBooks}
-      searchBooks = {searchBooks}/>
-      {books.length && (
-        <Route
-          path="/:category/:viewType"
-          render={({ match }) => {
-            const { category } = match.params
-            const { viewType } = match.params
-            if (viewType !== "EmbeddedBook"){
-              return (
-              <Inventory 
-              setBooks={setBooks}
-              books={books} 
-              category={category}
-              getSingleBooks={getSingleBooks}
-              viewType = {viewType}
-              /> )
-            }
-          }}
-        />
-      )}
-      {books.length && <Route
+    {error && <h1 className="error-message">Reptiles are eating! Check back in a minute to see if they are done.</h1>}
+    <Header 
+    getSingleBooks={getSingleBooks}
+    searchBooks = {searchBooks}/>
+    {loading && !error && <h1>Loading...</h1>}
+    {books.length > 0 && (
+      <Route
+        path="/:category/:viewType"
+        render={({ match }) => {
+          const { category } = match.params
+          const { viewType } = match.params
+          if (viewType !== "EmbeddedBook"){
+            return (
+            <Inventory 
+            setBooks={setBooks}
+            books={books} 
+            category={category}
+            getSingleBooks={getSingleBooks}
+            viewType = {viewType}
+            /> )
+          }
+        }}
+      />
+    )}
+      {books.length > 0 && <Route
         path="/:category/EmbeddedBook/:id"
         render={({ match }) => {
           const { id, category } = match.params
@@ -94,7 +95,6 @@ function App() {
       <Route path='/'>
         <Redirect to='/reptiles/SummaryView' />
       </Route>
-      {loading && !error && <section>Loading...</section>}
     </main>
   );
 }
