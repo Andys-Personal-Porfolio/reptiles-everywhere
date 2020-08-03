@@ -28,9 +28,13 @@ export const fetchBooks = async (searchCriteria) => {
   try {
     const response = await fetch(url)
     const data = await response.json()
-    return data
+    if(response.ok){
+      return data
+    } else {
+      throw new Error(response.statusText)
+    }
   } catch (error) {
-    return error
+    throw new Error(error)
   }
 }
 
@@ -40,7 +44,7 @@ export const fetchSingleBook = async (url) => {
     const data = await response.json()
     return data
   } catch (error) {
-    return error
+    throw new Error(error)
   }
 }
 
