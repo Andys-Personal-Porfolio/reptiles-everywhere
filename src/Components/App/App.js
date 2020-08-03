@@ -9,10 +9,11 @@ import { Route, Redirect, useLocation} from 'react-router-dom'
 function App() {
   const location = useLocation();
   const category = location ? location.pathname.split('/')[1] : 'reptiles'
-  const [books, setBooks] = useState({})
+  const [books, setBooks] = useState([])
   const [error, setError] = useState('')
-  const [searchCritera, setSearchCriteria] = useState(category || 'reptiles')
+  const [searchCritera, setSearchCriteria] = useState(category)
   const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     const getBooks = async () => {
       try {
@@ -34,6 +35,7 @@ function App() {
   }
 
   const getSingleBook = async (url) => {
+    setBooks([])
     try {
       const singleBook = await fetchSingleBook(url)
       const bookToAddImg = books.find(book => book.id === singleBook.id)

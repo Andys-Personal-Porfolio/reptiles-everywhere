@@ -2,30 +2,35 @@ import React from 'react'
 import './Header.scss'
 import { NavLink, useLocation } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import crocodile from '../../Assets/crocodile-src.png'
+import lizard from '../../Assets/lizard-src.png'
+import reptile from '../../Assets/reptile-src.png'
+import snake from '../../Assets/snake-src.png'
+import turtle from '../../Assets/turtle-src.png'
 
 const Header = ({ searchBooks, getSingleBooks}) => {
   const location = useLocation()
   const viewType = location.pathname.split('/')[2]
+  const urlCategory = location.pathname.split('/')[1]
  
 
   const updateLocation = (event) => {
     const category = event.target.innerHTML
-    viewType === "CoverView" ? getSingleBooks(category) : searchBooks(category)
+    if(viewType === "CoverView" && category === urlCategory) {
+      getSingleBooks(category)
+    } else {
+     searchBooks(category)
+    }
+
   }
 
   const makeNavLinks = (images) => {
     const categories = ['crocodiles', 'lizards', 'reptiles', 'snakes', 'turtles']
-    const imgSrcs = [
-      "https://i.imgur.com/u7gTddx.png",
-      "https://www.pngmart.com/files/3/Lizard-PNG-Transparent-Image.png",
-      "http://www.pngmart.com/files/6/Horned-Lizard-Transparent-PNG.png",
-      "https://i1.wp.com/freepngimages.com/wp-content/uploads/2015/10/cobra-snake-transparent-image.png?fit=1399%2C1248",
-      "https://lh3.googleusercontent.com/proxy/p2kV7i1UX75GPTNH40D4xH9uOFCWHbJGjgVx5HN4lXQIlU-GVK5H3vpYHVBzZCvutcAe3OL8RDh7YMcjOi8S-AuBU4J5fE8G7Rj7VzU7mYGPHNUG3J0yyqV07bfOHpNj"
-    ]
+    const imageSrcs = [crocodile, lizard, reptile, snake, turtle]
     const navLinks = categories.map((category,i) => {
       return (
         <section className="button-and-image" key={category + 'button'}>
-        <img src={imgSrcs[i]} alt={category} />
+          <img src={imageSrcs[i]} alt={category} />
         <NavLink 
           to={`/${category}/${viewType}`} 
           activeClassName='active'>

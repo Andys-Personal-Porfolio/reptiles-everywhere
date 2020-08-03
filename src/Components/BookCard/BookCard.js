@@ -22,13 +22,24 @@ const BookCard = ({ books, category, viewType }) => {
     </div>)
   }
 
+  
+
   const createCoverView = (book) => {
-    return (
-      <img
-        src={book.coverImg.medium}
-        alt={book.volumeInfo.title + " cover"}
-      />
-    )
+    if(book.coverImg) {
+      return (
+        <img
+          src={book.coverImg.medium}
+          alt={book.volumeInfo.title + " cover"}
+        />
+      )
+    } else {
+      return (
+        <img
+          src={book.volumeInfo.imageLinks.thumbnail}
+          alt={book.volumeInfo.title + " cover"}
+        />
+      )
+    }
   }
 
   return filteredBooks.map((book, i) => {
