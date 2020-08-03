@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './Inventory.scss'
 import { Link } from 'react-router-dom'
 import BookCard from '../BookCard/BookCard'
+import PropTypes from 'prop-types'
 
 const Inventory = ({ books, category, singleBooks, getSingleBooks, viewType, setBooks}) => {
   const upperCaseCategory = category[0].toUpperCase() + category.slice(1) 
@@ -9,7 +10,8 @@ const Inventory = ({ books, category, singleBooks, getSingleBooks, viewType, set
 
   return (
     <>
-      {viewType === 'SummaryView' && <Link to= {`/${category}/CoverView`}>
+      {viewType === 'SummaryView' && 
+      <Link to= {`/${category}/CoverView`}>
         <button 
         className="cover-btn" 
         onClick={() => {
@@ -18,7 +20,8 @@ const Inventory = ({ books, category, singleBooks, getSingleBooks, viewType, set
         }}>
         Book Covers</button>
       </Link>}
-      {viewType === 'CoverView' && <Link to= {`/${category}/SummaryView`}>
+      {viewType === 'CoverView' && 
+      <Link to= {`/${category}/SummaryView`}>
         <button className="cover-btn">Summaries</button>
       </Link>}
       <h1> {categorySingular} books:</h1>
@@ -33,5 +36,14 @@ const Inventory = ({ books, category, singleBooks, getSingleBooks, viewType, set
     </>
   )
 }
+
+Inventory.propTypes = {
+  books: PropTypes.array, 
+  category: PropTypes.string, 
+  singleBooks: PropTypes.func, 
+  getSingleBooks: PropTypes.func, 
+  viewType: PropTypes.string, 
+  setBooks: PropTypes.func
+};
 
 export default Inventory

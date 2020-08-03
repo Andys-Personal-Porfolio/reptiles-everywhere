@@ -1,6 +1,7 @@
 import React from 'react'
 import './BookCard.scss'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 const BookCard = ({ books, category, viewType }) => {
   const filteredBooks = books.filter(book => book.accessInfo.embeddable === true)
@@ -44,5 +45,13 @@ const BookCard = ({ books, category, viewType }) => {
     )
   })
 }
+
+
+BookCard.propTypes = {
+  books: PropTypes.array,
+  category: PropTypes.string,
+  viewType: PropTypes.string
+};
+
 
 export default BookCard

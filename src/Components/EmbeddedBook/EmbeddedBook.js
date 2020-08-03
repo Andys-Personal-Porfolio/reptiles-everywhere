@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory} from 'react-router-dom' 
 import './EmbeddedBook.scss'
+import PropTypes from 'prop-types'
 const EmbeddedBook = ({bookToRender}) => {
   const previewLink = bookToRender.volumeInfo.previewLink + '&output=embed'
   let history = useHistory();
@@ -27,5 +28,9 @@ const EmbeddedBook = ({bookToRender}) => {
   )
   
 }
+
+EmbeddedBook.propTypes = {
+  bookToRender: PropTypes.object
+};
 
 export default EmbeddedBook

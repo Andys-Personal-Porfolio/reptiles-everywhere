@@ -135,18 +135,43 @@ describe('App', () => {
     
   })
 
-  it.skip('should render error message if fetchSingleBooks fetch returns error', async () => {
-    // fetchSingleBook.mockImplementationOnce(() => {
-    //   throw new Error('Error: This is a cool test')
-    // })
+  it.skip('should go to the embedded book after going to cover view page ', async () => {
+    //This test works if previous test is skipped
+    const { getByRole, getAllByRole } = render(<MemoryRouter><App /></MemoryRouter>)
+    fetchSingleBook.mockResolvedValue(allAboutReptilesMockData)
+    
+    const bookCoverBtn = await waitFor(() => getByRole('button', { name: 'Book Covers' }))
+    expect(bookCoverBtn).toBeInTheDocument()
+    
+    fireEvent.click(bookCoverBtn)
+    
+    const mediumCovers = await waitFor(() => getAllByRole('img', { name: mockBookTitle + " cover" }))
+    expect(mediumCovers.length).toBe(2)
+
+    const startReadingBtn = await waitFor(() => getAllByRole('button', { name: "Start Reading " + mockBookTitle }))
+    expect(startReadingBtn[0]).toBeInTheDocument()
+
+    fireEvent.click(startReadingBtn[0])
+    const embeddedBook = await waitFor(() => getByRole('document', { title: mockBookTitle }))
+    const goBackBtn = await waitFor(() => getByRole('button', { name: 'Go Back To Home Page' }))
+    expect(embeddedBook).toBeInTheDocument()
+
+    expect(goBackBtn).toBeInTheDocument()
+  })
+
+
+  it('should render error message if fetchSingleBooks fetch returns error', async () => {
+    fetchSingleBook.mockImplementationOnce(() => {
+      throw new Error('Error: This is a cool test')
+    })
+    const { getByRole } = render(<MemoryRouter><App /></MemoryRouter>)
     const bookCoverBtn = await waitFor(() => getByRole('button', { name: 'Book Covers' }))
     expect(bookCoverBtn).toBeInTheDocument()
 
     fireEvent.click(bookCoverBtn)
-    const { getByRole } = render(<MemoryRouter><App /></MemoryRouter>)
 
-    // const errorMessage = await waitFor(() => getByRole('heading', { name: "Error: This is a cool test" }))
-    // expect(errorMessage).toBeInTheDocument()
+    const errorMessage = await waitFor(() => getByRole('heading', { name: "Error: This is a cool test" }))
+    expect(errorMessage).toBeInTheDocument()
 
   })
 
