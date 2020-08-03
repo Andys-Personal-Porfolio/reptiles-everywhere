@@ -14,19 +14,23 @@
   color:black;
 }
 
-.cover-btn {
-  display: inline;
-}
-
 .book-info {
   display: flex;
   flex-flow: column;
   align-items: center;
-  border: 1em  double $medium-green;
-  background: $white-green;
+  border: 1em double green;
+  background: yellowgreen;
   width: 40vw;
   justify-content: space-between;
   box-shadow: 1px 1px 2px black;
+  transition: ease 0.5s;
+  &:hover {
+  width: 40.1vw;
+  margin:-1px;
+  // h2 {  
+  //   font-size: 40px;
+  // }
+  }
 }
 
 .book-description {
@@ -40,9 +44,11 @@
 .text-snippet {
   color:$dark-green;
   text-align: left;
-  margin-right: 2em;
-  margin-left: 3em;
-  font-size: 20px;
+  margin-right: 1em;
+  margin-left: 1em;
+  font-size: 24px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
 a {
   text-decoration: none;
@@ -60,17 +66,24 @@ button {
     font-family:'Roboto',sans-serif;
     font-weight:800;
     font-size: 20px;
-    color:white;
+    width: 39vw;
+    color:black;
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
     text-align:center;
-    transition: all 0.15s;
-    background-color:#2ea44f;
+    transition: all 0.25s;
+    background-color:yellow;
     &:hover{
       text-shadow: 0 0 2em rgba(255,255,255,1);
       color:#FFFFFF;
       border-color:#FFFFFF;
+      margin:-.1px;
     }
   }
+
+.cover-btn {
+  display: inline;
+  font-size: 39px;
+}
 
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
 @media (min-width:481px)  { 
