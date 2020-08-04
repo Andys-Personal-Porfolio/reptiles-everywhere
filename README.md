@@ -19,6 +19,10 @@ Catered towards young children interested in reptiles, easy to use, bright color
 
 ## Setup
 
+Visit Deployed site : [Reptiles-everywhere](https://reptiles-everywhere.netlify.app/)
+
+--OR--
+
 Clone down this repository to your local machine.
 
 Once cloned, change into this repo's directy.
