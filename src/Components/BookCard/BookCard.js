@@ -18,7 +18,7 @@ const BookCard = ({ books, category, viewType }) => {
         <p className="text-snippet"
           dangerouslySetInnerHTML={{ __html: textSnippet }} />
       </section>
-      <p>{book.volumeInfo.authors}</p>
+        <p>{book.volumeInfo.authors ? book.volumeInfo.authors.join(', '): ''}</p>
     </div>)
   }
 
