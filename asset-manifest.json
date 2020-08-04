@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/between-the-lions/static/css/main.3d948e5a.chunk.css",
-    "main.js": "/between-the-lions/static/js/main.05de66b5.chunk.js",
-    "main.js.map": "/between-the-lions/static/js/main.05de66b5.chunk.js.map",
-    "runtime-main.js": "/between-the-lions/static/js/runtime-main.ef71632d.js",
-    "runtime-main.js.map": "/between-the-lions/static/js/runtime-main.ef71632d.js.map",
-    "static/js/2.87b7286e.chunk.js": "/between-the-lions/static/js/2.87b7286e.chunk.js",
-    "static/js/2.87b7286e.chunk.js.map": "/between-the-lions/static/js/2.87b7286e.chunk.js.map",
-    "index.html": "/between-the-lions/index.html",
-    "precache-manifest.ca02a9bae194113e33c30392284e0b2a.js": "/between-the-lions/precache-manifest.ca02a9bae194113e33c30392284e0b2a.js",
-    "service-worker.js": "/between-the-lions/service-worker.js",
-    "static/css/main.3d948e5a.chunk.css.map": "/between-the-lions/static/css/main.3d948e5a.chunk.css.map",
-    "static/js/2.87b7286e.chunk.js.LICENSE.txt": "/between-the-lions/static/js/2.87b7286e.chunk.js.LICENSE.txt",
-    "static/media/crocodile-src.png": "/between-the-lions/static/media/crocodile-src.b993ed36.png",
-    "static/media/lizard-src.png": "/between-the-lions/static/media/lizard-src.e5ff92d7.png",
-    "static/media/reptile-src.png": "/between-the-lions/static/media/reptile-src.25aa1c47.png",
-    "static/media/snake-src.png": "/between-the-lions/static/media/snake-src.be32f644.png",
-    "static/media/turtle-src.png": "/between-the-lions/static/media/turtle-src.d2d1c278.png"
+    "main.css": "/reptiles-everywhere/static/css/main.3d948e5a.chunk.css",
+    "main.js": "/reptiles-everywhere/static/js/main.a8a259e1.chunk.js",
+    "main.js.map": "/reptiles-everywhere/static/js/main.a8a259e1.chunk.js.map",
+    "runtime-main.js": "/reptiles-everywhere/static/js/runtime-main.f4fd3a49.js",
+    "runtime-main.js.map": "/reptiles-everywhere/static/js/runtime-main.f4fd3a49.js.map",
+    "static/js/2.87b7286e.chunk.js": "/reptiles-everywhere/static/js/2.87b7286e.chunk.js",
+    "static/js/2.87b7286e.chunk.js.map": "/reptiles-everywhere/static/js/2.87b7286e.chunk.js.map",
+    "index.html": "/reptiles-everywhere/index.html",
+    "precache-manifest.bfc0b02d926d28aa35f683cc143f6f66.js": "/reptiles-everywhere/precache-manifest.bfc0b02d926d28aa35f683cc143f6f66.js",
+    "service-worker.js": "/reptiles-everywhere/service-worker.js",
+    "static/css/main.3d948e5a.chunk.css.map": "/reptiles-everywhere/static/css/main.3d948e5a.chunk.css.map",
+    "static/js/2.87b7286e.chunk.js.LICENSE.txt": "/reptiles-everywhere/static/js/2.87b7286e.chunk.js.LICENSE.txt",
+    "static/media/crocodile-src.png": "/reptiles-everywhere/static/media/crocodile-src.b993ed36.png",
+    "static/media/lizard-src.png": "/reptiles-everywhere/static/media/lizard-src.e5ff92d7.png",
+    "static/media/reptile-src.png": "/reptiles-everywhere/static/media/reptile-src.25aa1c47.png",
+    "static/media/snake-src.png": "/reptiles-everywhere/static/media/snake-src.be32f644.png",
+    "static/media/turtle-src.png": "/reptiles-everywhere/static/media/turtle-src.d2d1c278.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ef71632d.js",
+    "static/js/runtime-main.f4fd3a49.js",
     "static/js/2.87b7286e.chunk.js",
     "static/css/main.3d948e5a.chunk.css",
-    "static/js/main.05de66b5.chunk.js"
+    "static/js/main.a8a259e1.chunk.js"
   ]
 }
