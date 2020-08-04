@@ -49,7 +49,7 @@ const BookCard = ({ books, category, viewType }) => {
         {viewType === 'CoverView' && createCoverView(book,i)}
         {viewType === 'SummaryView' && createSummaryView(book, textSnippet)}
 
-        <Link to={`/${category}/EmbeddedBook/${book.id}`} style={{textDecoration: "none"}}>
+        <Link to={`/reptiles-everywhere/${category}/EmbeddedBook/${book.id}`} style={{textDecoration: "none"}}>
           <button aria-label={`Start Reading ${book.volumeInfo.title}`}>START READING</button>
         </Link>
       </div>

@@ -8,7 +8,7 @@ import { Route, Redirect, useLocation} from 'react-router-dom'
 
 function App() {
   const location = useLocation();
-  const category = location ? location.pathname.split('/')[1] : 'reptiles'
+  const category = location ? location.pathname.split('/')[2] : 'reptiles'
   const [books, setBooks] = useState([])
   const [error, setError] = useState('')
   const [searchCritera, setSearchCriteria] = useState(category || "reptiles")
@@ -59,7 +59,7 @@ function App() {
     {loading && !error && <h1>Loading...</h1>}
     {books.length > 0 && (
       <Route
-        path="/:category/:viewType"
+        path="/reptiles-everywhere/:category/:viewType"
         render={({ match }) => {
           const { category } = match.params
           const { viewType } = match.params
@@ -77,7 +77,7 @@ function App() {
       />
     )}
       {books.length > 0 && <Route
-        path="/:category/EmbeddedBook/:id"
+        path="/reptiles-everywhere/:category/EmbeddedBook/:id"
         render={({ match }) => {
           const { id, category } = match.params
           const bookToRender = books.find(
@@ -93,7 +93,7 @@ function App() {
         }}
       />}
       <Route path='/'>
-        <Redirect to='/reptiles/SummaryView' />
+        <Redirect to='/reptiles-everywhere/reptiles/SummaryView' />
       </Route>
     </main>
   );

@@ -10,11 +10,11 @@ import turtle from '../../Assets/turtle-src.png'
 
 const Header = ({ searchBooks, getSingleBooks}) => {
   const location = useLocation()
-  let viewType = location.pathname.split('/')[2]
+  let viewType = location.pathname.split('/')[3]
   if (viewType === 'EmbeddedBook') {
     viewType = "SummaryView"
   }
-  const urlCategory = location.pathname.split('/')[1] 
+  const urlCategory = location.pathname.split('/')[2] 
  
 
   const updateLocation = (event) => {
@@ -36,7 +36,7 @@ const Header = ({ searchBooks, getSingleBooks}) => {
         <section className="button-and-image" key={category + 'button'}>
           <img src={imageSrcs[i]} alt={category} />
         <NavLink 
-          to={`/${category}/${viewType}`} 
+          to={`/reptiles-everywhere/${category}/${viewType}`} 
           activeClassName='active'>
           <button className="nav-link-btn"
           onClick={(event) => updateLocation(event)}>
