@@ -11,7 +11,7 @@ function App() {
   const category = location ? location.pathname.split('/')[1] : 'reptiles'
   const [books, setBooks] = useState([])
   const [error, setError] = useState('')
-  const [searchCritera, setSearchCriteria] = useState(category)
+  const [searchCritera, setSearchCriteria] = useState(category || "reptiles")
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
