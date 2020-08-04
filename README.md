@@ -6,7 +6,7 @@
 - Andy Tom (GitHub: [attom2](https://github.com/attom2))
 
 ## Abstract
-This educational reading application act as an interactive library. Users are able to select a book from a number of different categories, all large font and pictures included. 
+This children's educational reading application acts as an interactive library. Users are able to select a book from a number of different categories, all large font and pictures included. 
 
 Catered towards young children interested in reptiles, easy to use, bright colors, and interesting content.
 
