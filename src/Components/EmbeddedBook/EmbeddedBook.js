@@ -4,6 +4,7 @@ import './EmbeddedBook.scss'
 import PropTypes from 'prop-types'
 const EmbeddedBook = ({bookToRender}) => {
   const previewLink = bookToRender.volumeInfo.previewLink + '&output=embed'
+  const secureLink = previewLink.slice(0, 4) + "s" + previewLink.slice(4)
   let history = useHistory();
 
   return (
@@ -18,7 +19,7 @@ const EmbeddedBook = ({bookToRender}) => {
         frameBorder="0" 
         scrolling="no" 
         style={{ border: 0 }} 
-        src={previewLink} 
+        src={secureLink} 
         width="600"
         height="700 " 
         role="document"
