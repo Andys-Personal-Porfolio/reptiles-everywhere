@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/reptile/SummaryView/static/css/main.3d948e5a.chunk.css",
+    "main.js": "/reptile/SummaryView/static/js/main.00c0725d.chunk.js",
+    "main.js.map": "/reptile/SummaryView/static/js/main.00c0725d.chunk.js.map",
+    "runtime-main.js": "/reptile/SummaryView/static/js/runtime-main.53cac60a.js",
+    "runtime-main.js.map": "/reptile/SummaryView/static/js/runtime-main.53cac60a.js.map",
+    "static/js/2.87b7286e.chunk.js": "/reptile/SummaryView/static/js/2.87b7286e.chunk.js",
+    "static/js/2.87b7286e.chunk.js.map": "/reptile/SummaryView/static/js/2.87b7286e.chunk.js.map",
+    "index.html": "/reptile/SummaryView/index.html",
+    "precache-manifest.e98ad341becec5360ae7c3ca8a572d79.js": "/reptile/SummaryView/precache-manifest.e98ad341becec5360ae7c3ca8a572d79.js",
+    "service-worker.js": "/reptile/SummaryView/service-worker.js",
+    "static/css/main.3d948e5a.chunk.css.map": "/reptile/SummaryView/static/css/main.3d948e5a.chunk.css.map",
+    "static/js/2.87b7286e.chunk.js.LICENSE.txt": "/reptile/SummaryView/static/js/2.87b7286e.chunk.js.LICENSE.txt",
+    "static/media/crocodile-src.png": "/reptile/SummaryView/static/media/crocodile-src.b993ed36.png",
+    "static/media/lizard-src.png": "/reptile/SummaryView/static/media/lizard-src.e5ff92d7.png",
+    "static/media/reptile-src.png": "/reptile/SummaryView/static/media/reptile-src.25aa1c47.png",
+    "static/media/snake-src.png": "/reptile/SummaryView/static/media/snake-src.be32f644.png",
+    "static/media/turtle-src.png": "/reptile/SummaryView/static/media/turtle-src.d2d1c278.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53cac60a.js",
+    "static/js/2.87b7286e.chunk.js",
+    "static/css/main.3d948e5a.chunk.css",
+    "static/js/main.00c0725d.chunk.js"
+  ]
+}
