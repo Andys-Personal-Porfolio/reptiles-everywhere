@@ -1,13 +1,4 @@
-// export const getChildrensBooks = async() => {
-//   try {
-//     const response = await fetch("https://openlibrary.org/subjects/animals.json")
-//     const data = await response.json()
-//     console.log(data)
-//     return data
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
+
 
 export const fetchBooks = async (searchCriteria) => {
   const urlParts = 
