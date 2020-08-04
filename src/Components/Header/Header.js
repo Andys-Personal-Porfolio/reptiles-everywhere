@@ -10,7 +10,10 @@ import turtle from '../../Assets/turtle-src.png'
 
 const Header = ({ searchBooks, getSingleBooks}) => {
   const location = useLocation()
-  const viewType = location.pathname.split('/')[2]
+  let viewType = location.pathname.split('/')[2]
+  if (viewType === 'EmbeddedBook') {
+    viewType = "SummaryView"
+  }
   const urlCategory = location.pathname.split('/')[1] 
  
 
@@ -27,6 +30,7 @@ const Header = ({ searchBooks, getSingleBooks}) => {
   const makeNavLinks = (images) => {
     const categories = ['crocodiles', 'lizards', 'reptiles', 'snakes', 'turtles']
     const imageSrcs = [crocodile, lizard, reptile, snake, turtle]
+    
     const navLinks = categories.map((category,i) => {
       return (
         <section className="button-and-image" key={category + 'button'}>
