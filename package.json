@@ -2,7 +2,6 @@
   "name": "kids-books",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://attom2.github.io/reptiles-everywhere/",
   "dependencies": {
     "@testing-library/react": "^10.4.7",
     "@testing-library/user-event": "^7.2.1",
@@ -17,9 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
