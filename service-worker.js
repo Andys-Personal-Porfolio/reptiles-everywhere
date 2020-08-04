@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/reptiles-everywhere/precache-manifest.bfc0b02d926d28aa35f683cc143f6f66.js"
+  "/reptiles-everywhere/precache-manifest.aaf82ef0ed60faf6a842a65f368e0a7c.js"
 );
 
 self.addEventListener('message', (event) => {
