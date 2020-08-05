@@ -19,7 +19,7 @@ Catered towards young children interested in reptiles, easy to use, bright color
 
 ## Setup
 
-Visit Deployed site : [Reptiles-everywhere](https://reptiles-everywhere.netlify.app/)
+Visit Deployed site : [Reptiles-everywhere](https://attom2.github.io/reptiles-everywhere/)
 
 --OR--
 
