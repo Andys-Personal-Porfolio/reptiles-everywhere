@@ -11,7 +11,7 @@ const Inventory = ({ books, category, singleBooks, getSingleBooks, viewType, set
   return (
     <>
       {viewType === 'SummaryView' && 
-      <Link to= {`/${category}/CoverView`}>
+      <Link to= {`/reptiles-everywhere/${category}/CoverView`}>
         <button 
         className="cover-btn" 
         onClick={() => {
@@ -21,7 +21,7 @@ const Inventory = ({ books, category, singleBooks, getSingleBooks, viewType, set
         Book Covers</button>
       </Link>}
       {viewType === 'CoverView' && 
-      <Link to= {`/${category}/SummaryView`}>
+      <Link to= {`/reptiles-everywhere/${category}/SummaryView`}>
         <button className="cover-btn">Summaries</button>
       </Link>}
       <div className="book-container" >
