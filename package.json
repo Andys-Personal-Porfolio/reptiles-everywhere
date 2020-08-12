@@ -2,7 +2,7 @@
   "name": "kids-books",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://attom2.github.io/reptiles-everywhere",
+  "homepage": "http://attom2.github.io/reptiles-everywhere/",
   "dependencies": {
     "@testing-library/react": "^10.4.7",
     "@testing-library/user-event": "^7.2.1",
