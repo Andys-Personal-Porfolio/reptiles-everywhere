@@ -2,17 +2,14 @@
 
 # Reptiles Everywhere!
 
-### Contributors
-- Andy Tom (GitHub: [attom2](https://github.com/attom2))
-
 ## Abstract
 This children's educational reading application acts as an interactive library. Users are able to select a book from a number of different categories, all large font and pictures included. 
 
 Catered towards young children interested in reptiles, easy to use, bright colors, and interesting content.
 
-## Learning Goals
+## What I learned
 - Reinforce React fundamentals and Hooks
-- Use an api to practice async functionality
+- Use a Google Books API
 - Reinforce using React Router to create a multi-page user experience
 
 
